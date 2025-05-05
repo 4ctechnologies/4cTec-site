@@ -1,4 +1,9 @@
 import Link from "next/link";
+import { Plans } from "@/data/Pricing";
+import PricingCard from "@/components/PricingCard";
+import { heights, testimonials } from "@/data/testimonials";
+import TestimonialCard from "@/components/TestimonialCard";
+import { FAQSection } from "@/components/FAQSection";
 
 export default function Home() {
   return (
@@ -63,6 +68,54 @@ export default function Home() {
             asperiores, velit eos consectetur?
           </p>
           <Link href={"/about"}>Learn more</Link>
+        </section>
+        <section className='grid grid-cols-1 md:grid-cols-3 gap-4 w-full min-h-svh p-8 sm:p-16 '>
+          {/* Pricing Section */}
+          {Plans.map((plan) => (
+            <div key={Plans.indexOf(plan)} className=''>
+              <PricingCard
+                title={plan.title}
+                description={plan.description}
+                price={plan.price?.toString()}
+                features={plan.features}
+                buttonText={plan.buttonText}
+                link={plan.link}
+              />
+            </div>
+          ))}
+        </section>
+        <section className='flex flex-col gap-4 w-full min-h-svh bg-white  text-black'>
+          <div className='w-full md:w-1/2 space-y-8'>
+            <h1 className='text-4xl font-bold text-center md:text-left'>
+              Real<cite>results</cite>
+            </h1>
+          </div>
+          <div className='grid grid-cols-3 md:grid-cols-5 gap-4 w-full min-h-svh'>
+            {testimonials.map((testimonial) => (
+              <div
+                key={testimonials.indexOf(testimonial)}
+                className={`mt-${
+                  heights[Math.floor(Math.random() * heights.length)]
+                }`}
+              >
+                <TestimonialCard
+                  image={testimonial.image}
+                  description={testimonial.description}
+                  name={testimonial.name}
+                />
+              </div>
+            ))}
+          </div>
+        </section>
+        <section>
+          <h1>Got a Question?</h1>
+          <FAQSection />
+        </section>
+        <section>
+          <h1>
+            Book your musical journy <cite>now</cite>
+          </h1>
+          {/* Blog section */}
         </section>
       </main>
     </div>

@@ -23,8 +23,12 @@
 
 p {
   font-family: var(--font-secondary);
-  line-height: 30px;
-  font-size: 1.2em;
+
+}
+
+cite {
+  font-style: normal;
+  color: var(--color-primary)
 }
 
 

@@ -1,9 +1,6 @@
 import Image from "next/image";
-export interface FeatureCardProps {
-  image: string;
-  description: string;
-}
-const FeatureCard = ({ image, description }: FeatureCardProps) => {
+import { featureCards } from "@/types/features";
+const FeatureCard = ({ image, description }: featureCards) => {
   return (
     <div>
       <Image src={image} alt={`${description.slice(0, 20)}...`} />

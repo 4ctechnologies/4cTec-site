@@ -118,7 +118,7 @@ export default function Footer() {
                 </svg>
               </a>
             </li>
-            <li className=' stroke-primary hover:fill-primary fill-white dark:fill-secondary transition duration-300 ease-in-out'>
+            <li className=' stroke-primary hover:fill-primary  fill-white dark:fill-secondary transition duration-300 ease-in-out'>
               <a
                 href='https://www.youtube.com/@vangtec/'
                 target='_blank'
@@ -163,6 +163,7 @@ export default function Footer() {
           </ul>
         </div>
         <div className='md:col-span-2 lg:col-span-1 flex flex-col items-center justify-center'>
+          <div className='hidden mt-4 mt-8 mt-12 mt-16 mt-20 mt-24 mt-32'></div>
           <p className='text-sm text-gray-500'>
             Developed by <span className='text-primary'>VangTec</span> Team{" "}
             <br />

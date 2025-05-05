@@ -1,30 +1,22 @@
+import { testimonialCards } from "@/types/testimonials";
 import Image from "next/image";
-interface TestimonialCardProps {
-  image: string;
-  description: string;
-  name: string;
-}
 
-export default function TestimonialCard({
-  props,
-}: {
-  props: TestimonialCardProps;
-}) {
+export default function TestimonialCard(props: testimonialCards) {
   return (
-    <div className='flex flex-col items-center justify-center p-4 bg-white rounded-lg shadow-md'>
+    <div className='flex flex-col items-start justify-between space-y-4 p-4 bg-white rounded-lg shadow-md'>
       <Image
         src={props.image}
         alt='Testimonial'
         width={100}
         height={100}
-        className='rounded-full mb-4'
+        className='rounded-full mb-4 w-10 h-10 object-cover'
       ></Image>
-      <p className='text-gray-600'>
+      <p className='font-semibold text-sm'>
         &quot;
         {props.description}
         &quot;
       </p>
-      <h3 className='text-lg font-semibold'>{props.name}</h3>
+      <h3 className='text-xs'>{props.name}</h3>
     </div>
   );
 }

@@ -1,8 +1,8 @@
 import { useState } from "react";
 import FeatureCard from "./FeatureCard";
-import { FeatureCardProps } from "./FeatureCard";
+import { features } from "@/data/features";
 
-const FeatureSection = ({ features }: { features: FeatureCardProps[] }) => {
+const FeatureSection = () => {
   const [selectedCard, setSelectedCard] = useState<number | null>(null);
   // create a sliding section with 10 cards in a single line with overflown cards. with two left and right arrows to sctoll card by cards
   // with a 2 or 3 pixel heighe scroll bar with white handle and light gray bar looks like a line
