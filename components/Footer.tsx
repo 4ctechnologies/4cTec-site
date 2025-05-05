@@ -7,83 +7,143 @@ export default function Footer() {
       <div className='grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 w-full p-4'>
         <div id='socials'>
           <ul className='flex items-center justify-start space-x-0'>
-            <li className='hover:text-primary transition duration-300 ease-in-out py-3 px-5 border-2 hover:border-primary border-background rounded-xl'>
-              <a
-                href='https://www.linkedin.com/company/vangtec/'
-                target='_blank'
-                rel='noopener noreferrer'
-              >
-                {/* svg for LinkedIn */}
-                <svg
-                  xmlns='http://www.w3.org/2000/svg'
-                  className='h-6 w-6'
-                  viewBox='0 0 20 20'
-                  fill='currentColor'
-                  aria-hidden='true'
-                >
-                  <path
-                    fillRule='evenodd'
-                    d='M16.338 16.338 H13.67 V12.16c0-.995-.017-2.274-1.387-2.274-1.399 0-1.613 1.086-1.613 2.208v4.244H8.662V7.5h2.634v1.01h.036c.366-.694 1.261-1.426 2.594-1.426 2.775 0 3.287 1.83 3.287 4.21v5.054z M5.338 6a2 2 0 11-.001-4 2 2 0 01.001 4zm-.001 10H8V7H5.337v9z'
-                    clipRule='evenodd'
-                  />
-                </svg>
-              </a>
-            </li>
-            <li className='hover:text-primary transition duration-300 ease-in-out py-3 px-5 border-2 hover:border-primary border-background rounded-xl'>
+            <li className='hover:stroke-secondary hover:fill-primary stroke-primary transition duration-300 ease-in-out'>
               <a
                 href='https://www.facebook.com/vangtec/'
                 target='_blank'
                 rel='noopener noreferrer'
               >
-                {/* svg for Facebook */}
                 <svg
                   xmlns='http://www.w3.org/2000/svg'
-                  className='h-6 w-6'
-                  viewBox='0 0 20 20'
-                  fill='currentColor'
-                  aria-hidden='true'
+                  viewBox='0 0 50 50'
+                  width='50px'
+                  height='50px'
                 >
-                  <path d='M10 2a8 8 0 100 16 8 8 0 000-16zm1.5 4.5h-3v1.5h3V7h-3v1.5h3V10h-3v1.5h3V14h-3v1.5h3V18h-4.5V14H7v-1.5h1.5V10H7V8.5h1.5V7H7V6h4.5z' />
+                  <path
+                    style={{
+                      strokeWidth: "1",
+                      strokeLinecap: "round",
+                      strokeLinejoin: "round",
+                      strokeMiterlimit: "10",
+                    }}
+                    d='M9,45h32c2.209,0,4-1.791,4-4V9c0-2.209-1.791-4-4-4H9C6.791,5,5,6.791,5,9v32C5,43.209,6.791,45,9,45z'
+                  />
+                  <polygon
+                    style={{
+                      strokeWidth: "1",
+                      fill: "#000000",
+                      strokeLinecap: "round",
+                      strokeLinejoin: "round",
+                      strokeMiterlimit: "10",
+                    }}
+                    className='stroke-primary hover:stroke-primary'
+                    points='11,20 17,20 17,33.135 17,39 11,39 '
+                  />
+                  <path
+                    style={{
+                      strokeWidth: "1",
+                      fill: "#000000",
+                      strokeLinecap: "round",
+                      strokeLinejoin: "round",
+                      strokeMiterlimit: "10",
+                    }}
+                    className='stroke-primary hover:stroke-primary'
+                    d='M14,17L14,17c-1.8,0-3-1.133-3-2.533S12.2,12,14,12s2.925,1.067,3,2.467C17,15.867,15.875,17,14,17z'
+                  />
+                  <path
+                    style={{
+                      strokeWidth: "1",
+                      fill: "#000000",
+                      strokeLinecap: "round",
+                      strokeLinejoin: "round",
+                      strokeMiterlimit: "10",
+                    }}
+                    className='stroke-primary hover:stroke-primary'
+                    d='M39,39h-6c0,0,0-9.257,0-10c0-2-1-4-3.5-4.043C27.022,24.913,26,27,26,29c0,0.909,0,10,0,10h-6V20h6v2.561c0,0,1.93-2.561,5.813-2.561C35.778,20,39,22.726,39,28.261V39z'
+                  />
                 </svg>
               </a>
             </li>
-            <li className='hover:text-primary transition duration-300 ease-in-out py-3 px-5 border-2 hover:border-primary border-background rounded-xl'>
+            <li className='hover:stroke-secondary hover:fill-primary transition duration-300 ease-in-out'>
+              <a
+                href='https://www.facebook.com/vangtec/'
+                target='_blank'
+                rel='noopener noreferrer'
+              >
+                <svg
+                  xmlns='http://www.w3.org/2000/svg'
+                  viewBox='0 0 50 50'
+                  width='50px'
+                  height='50px'
+                >
+                  <path
+                    style={{
+                      strokeWidth: 2,
+                      strokeLinecap: "round",
+                      strokeMiterlimit: 10,
+                    }}
+                    className='stroke-primary'
+                    d='M25,4C13.402,4,4,13.402,4,25c0,10.528,7.756,19.222,17.861,20.74V30.566h-5.196v-5.52h5.196v-3.673c0-6.081,2.963-8.751,8.017-8.751c2.421,0,3.701,0.179,4.307,0.261v4.818h-3.447c-2.145,0-2.895,2.034-2.895,4.327v3.017h6.289l-0.853,5.52h-5.435v15.22C38.093,44.395,46,35.631,46,25C46,13.402,36.598,4,25,4z'
+                  />
+                </svg>
+              </a>
+            </li>
+            <li className='hover:stroke-secondary hover:fill-primary stroke-primary transition duration-300 ease-in-out'>
+              {/* Instagram */}
               <a
                 href='https://www.instagram.com/vangtec/'
                 target='_blank'
                 rel='noopener noreferrer'
               >
-                {/* svg for Instagram */}
                 <svg
+                  className='group'
                   xmlns='http://www.w3.org/2000/svg'
-                  className='h-6 w-6'
-                  viewBox='0 0 20 20'
-                  fill='currentColor'
-                  aria-hidden='true'
+                  viewBox='0 0 50 50'
+                  width='50px'
+                  height='50px'
                 >
                   <path
-                    fillRule='evenodd'
-                    d='M18 13V5a2 2 0 00-2-2H4a2 2 0 00-2 2v8a2 2 0 002 2h12a2 2 0 002-2zm-1.5-8.5a1.5 1.5 0 11-3.001-.001A1.5 1.5 0 0116.5 4.5zM10 7a3 3 0 100 6 3 3 0 000-6z'
-                    clipRule='evenodd'
+                    style={{ strokeWidth: 1, strokeMiterlimit: 10 }}
+                    d='M16,46h18c6.627,0,12-5.373,12-12V16c0-6.627-5.373-12-12-12H16C9.373,4,4,9.373,4,16v18C4,40.627,9.373,46,16,46z'
+                  />
+                  <circle
+                    style={{ strokeWidth: 1, strokeMiterlimit: 10 }}
+                    cx='25'
+                    cy='25'
+                    r='10'
+                    className='group-hover:fill-secondary group-hover:stroke-primary'
+                  />
+                  <circle
+                    cx='37'
+                    cy='13'
+                    r='2'
+                    className='group-hover:fill-secondary group-hover:stroke-primary'
                   />
                 </svg>
               </a>
             </li>
-            <li className='hover:text-primary transition duration-300 ease-in-out py-3 px-5 border-2 hover:border-primary border-background rounded-xl'>
+            <li className=' stroke-primary hover:fill-primary transition duration-300 ease-in-out'>
               <a
-                href='https://www.youtube.com/@vangtec'
+                href='https://www.youtube.com/@vangtec/'
                 target='_blank'
                 rel='noopener noreferrer'
               >
-                {/* svg for YouTube */}
                 <svg
                   xmlns='http://www.w3.org/2000/svg'
-                  className='h-6 w-6'
-                  viewBox='0 0 20 20'
-                  fill='currentColor'
-                  aria-hidden='true'
+                  viewBox='0 0 50 50'
+                  width='50px'
+                  height='50px'
                 >
-                  <path d='M10 2a8 8 0 100 16 8 8 0 000-16zm1.5 4.5h-3v1.5h3V7h-3v1.5h3V10h-3v1.5h3V14h-3v1.5h3V18h-4.5V14H7v-1.5h1.5V10H7V8.5h1.5V7H7V6h4.5z' />
+                  <g>
+                    <path
+                      style={{ strokeWidth: "1" }}
+                      d='M24.4,11c7.2,0,13,0.6,15.8,1.1c1.5,0.4,2.7,1.4,2.9,2.7c0.6,3.2,1,6.6,1,10.1c-0.1,4.3-0.6,7.8-1,10.3c-0.3,1.9-2.3,2.5-2.9,2.7c-3.6,0.7-9.6,1.2-15.6,1.2s-12.1-0.4-15.6-1.2c-1.5-0.4-2.7-1.4-2.9-2.7C5.3,32.4,5,28.7,5,25c0-4.6,0.4-8,0.8-10.1c0.3-1.9,2.4-2.5,2.9-2.7C12,11.5,18.1,11,24.4,11 M24.4,9c-6.6,0-12.8,0.5-16.1,1.2c-2.2,0.5-4.1,2-4.5,4.3C3.4,16.9,3,20.5,3,25S3.4,33,3.9,35.5c0.4,2.2,2.3,3.8,4.5,4.3c3.5,0.7,9.5,1.2,16.1,1.2c6.6,0,12.6-0.5,16.1-1.2c2.2-0.5,4.1-2,4.5-4.3c0.4-2.5,0.9-6.1,1-10.6c0-4.5-0.5-8.1-1-10.6c-0.4-2.2-2.3-3.8-4.5-4.3C37.1,9.5,31,9,24.4,9L24.4,9z'
+                    />
+                  </g>
+                  <path
+                    style={{ strokeWidth: "1" }}
+                    d='M21,20.4l8,4.6l-8,4.6V20.4 M19,17v16l14-8L19,17L19,17z'
+                  />
                 </svg>
               </a>
             </li>
