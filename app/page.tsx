@@ -4,7 +4,7 @@ export default function Home() {
   return (
     <div className='grid grid-rows-[20px_1fr_20px] items-center justify-items-center min-h-screen p-8 pb-20 gap-16 sm:p-20 font-[family-name:var(--font-geist-sans)]'>
       <main className='flex flex-col gap-[32px] row-start-2 items-center sm:items-start'>
-        <section className='flex flex-col gap-4 w-full min-h-svh bg-[url(/images/hero-bg.jpg)] bg-cover bg-center bg-no-repeat rounded-lg p-8 sm:p-16 text-white'>
+        <section className='flex flex-col gap-4 w-full min-h-svh bg-[url(/images/hero-bg.jpg)] bg-cover bg-center bg-no-repeat rounded-lg p-8 sm:p-16 text-secondary dark:text-white'>
           <div className='w-full md:w-1/2 space-y-8'>
             <h1 className='text-6xl font-bold text-center md:text-left'>
               Online music production courses
@@ -13,7 +13,7 @@ export default function Home() {
               Lorem ipsum dolor, sit amet consectetur adipisicing elit. Maiores
               voluptas omnis harum eos.
             </p>
-            <div className='flex justify-center md:justify-start'>
+            <div className='flex space-x-4 justify-center md:justify-start'>
               <Link href={"/register"}>
                 <button className='bg-primary text-white px-4 py-2 rounded-lg hover:bg-secondary border-primary border  transition duration-300 ease-in-out cursor-pointer'>
                   Get Started

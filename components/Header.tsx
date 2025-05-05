@@ -18,7 +18,7 @@ export default function Header() {
             <Link href='/'>Contact</Link>
           </li>
           <li className='bg-theme-white text-black rounded-xl px-5 py-3 hover:bg-primary hover:text-white transition duration-300 ease-in-out'>
-            <Link href='/login'>Apply now</Link>
+            <Link href='/login' className="text-nowrap">Apply now</Link>
           </li>
         </ul>
       </nav>
