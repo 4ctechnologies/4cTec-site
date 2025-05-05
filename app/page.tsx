@@ -20,7 +20,7 @@ export default function Home() {
                 </button>
               </Link>
               <Link href={"/about"}>
-                <button className='bg-secondary text-white px-4 py-2 rounded-lg hover:border-primary border border-secondary transition duration-300 ease-in-out ml-4 cursor-pointer'>
+                <button className='bg-secondary text-white px-4 py-2 rounded-lg hover:border-primary border border-secondary transition duration-300 ease-in-out cursor-pointer'>
                   Learn More
                 </button>
               </Link>
@@ -38,19 +38,31 @@ export default function Home() {
               Lorem ipsum dolor, sit amet consectetur adipisicing elit. Maiores
               voluptas omnis harum eos. Maiores voluptas omnis harum eos.
             </p>
-            <div className='flex justify-center md:justify-start'>
+            <div className='flex justify-center gap-4 md:justify-start'>
               <Link href={"/about"}>
-                <button className='bg-secondary text-white px-4 py-2 rounded-lg hover:border-primary border border-secondary transition duration-300 ease-in-out ml-4 cursor-pointer'>
+                <button className='bg-secondary text-white px-4 py-2 rounded-lg hover:border-secondary hover:bg-white hover:text-secondary border border-secondary transition duration-300 ease-in-out cursor-pointer'>
                   Learn More
                 </button>
               </Link>
               <Link href={"/register"}>
-                <button className='bg-primary text-white px-4 py-2 rounded-lg hover:bg-secondary border-primary border  transition duration-300 ease-in-out cursor-pointer'>
+                <button className=' text-secondary px-4 py-2 rounded-lg hover:bg-secondary  border border-white hover:text-white hover:border-secondary  transition duration-300 ease-in-out cursor-pointer'>
                   Get Started
                 </button>
               </Link>
             </div>
           </div>
+          <div className="bg-[url('/images/hero-bg.jpg')] bg-cover bg-center bg-no-repeat rounded-lg w-full h-full text-white"></div>
+        </section>
+        <section>
+          <h3>The Course</h3>
+          <h1>Interactive Online Lessons</h1>
+          <p>
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Quibusdam
+            officia perferendis sequi natus dolorum inventore excepturi
+            repudiandae vitae illum magni optio similique cum error eius quae
+            asperiores, velit eos consectetur?
+          </p>
+          <Link href={"/about"}>Learn more</Link>
         </section>
       </main>
     </div>
