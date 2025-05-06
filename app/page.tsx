@@ -90,7 +90,7 @@ export default function Home() {
               Real<cite>results</cite>
             </h1>
           </div>
-          <div className='grid grid-cols-3 md:grid-cols-5 gap-4 w-full min-h-svh'>
+          <div className='grid grid-cols-3 lg:grid-cols-5 gap-4 w-full min-h-svh'>
             {testimonials.map((testimonial) => (
               <div
                 key={testimonials.indexOf(testimonial)}

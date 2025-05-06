@@ -3,6 +3,7 @@ import { Inter, Poppins } from "next/font/google";
 import "./globals.css";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
+import ThemeToggle from "@/components/DarkModeToggle";
 
 const inter = Inter({
   subsets: ["latin"],
@@ -27,9 +28,14 @@ export default function RootLayout({
 }>) {
   return (
     <html lang='en'>
-      <body className={`${inter.variable} ${poppins.variable}} antialiased`}>
+      <body
+        className={`${inter.variable} ${poppins.variable}} antialiased bg-white dark:bg-secondary`}
+      >
         <Header />
-        {children}
+        <ThemeToggle />
+        <main className='max-w-7xl mx-auto px-4 sm:px-6 lg:px-8'>
+          {children}
+        </main>
         <Footer />
       </body>
     </html>
