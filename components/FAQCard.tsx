@@ -38,10 +38,10 @@ export const FAQCard = ({
         }`}
         onClick={onClick}
       >
-        <h2 className='text-xl font-bold mb-4'>{question}</h2>
+        <h2 className='text-xl text-secondary dark:text-white font-bold mb-4'>{question}</h2>
         <span>{expanded ? <Remove /> : <Add />}</span>
       </div>
-      {expanded && <p className='text-gray-600 mb-4 w-11/12'>{answer}</p>}
+      {expanded && <p className='text-secondary dark:text-white mb-4 w-11/12'>{answer}</p>}
     </motion.div>
   );
 };

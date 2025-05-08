@@ -33,7 +33,7 @@ export default function RootLayout({
       >
         <Header />
         <ThemeToggle />
-        <main className='max-w-7xl dark:text-white mx-auto px-4 sm:px-6 lg:px-8'>
+        <main className='max-w-[1600px] dark:text-white mx-auto'>
           {children}
         </main>
         <Footer />

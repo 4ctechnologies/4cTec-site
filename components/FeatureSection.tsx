@@ -1,12 +1,29 @@
+import { motion } from "framer-motion";
 import FeatureCard from "./FeatureCard";
 import { features } from "@/data/features";
 
 const FeatureSection = () => {
-  // create a sliding section with 10 cards in a single line with overflown cards. with two left and right arrows to sctoll card by cards
-  // with a 2 or 3 pixel heighe scroll bar with white handle and light gray bar looks like a line
+  const parentVarients = {
+    hidden: { opacity: 0 },
+    visible: {
+      opacity: 1,
+      transition: {
+        staggerChildren: 0.2,
+      },
+    },
+  };
+  const childVarients = {
+    hidden: { opacity: 0, y: 100 },
+    visible: { opacity: 1, y: 0 },
+  };
   return (
     //
-    <div className='flex snap-x snap-mandatory scroll-p-4 overflow-x-scroll thin-scroll dark:thin-scroll-dark'>
+    <motion.div
+      variants={parentVarients}
+      initial='hidden'
+      whileInView='visible'
+      className='flex max-w-5xl mx-auto snap-x snap-mandatory overflow-x-scroll overflow-y-hidden thin-scroll '
+    >
       {/* <button
         className='absolute z-10 left-0 top-1/2 transform -translate-y-1/2 bg-white rounded-full p-2 shadow-md'
         onClick={() => {
@@ -53,14 +70,19 @@ const FeatureSection = () => {
         </svg>
       </button> */}
       {features.map((feature, index) => (
-        <div
+        <motion.div
+          variants={childVarients}
+          transition={{
+            duration: 0.5,
+            ease: "easeInOut",
+          }}
           key={index}
-          className='flex-shrink-0 w-4/5 p-2 snap-center snap-always'
+          className='flex-shrink-0 w-sm p-2 snap-start snap-always'
         >
           <FeatureCard {...feature} />
-        </div>
+        </motion.div>
       ))}
-    </div>
+    </motion.div>
   );
 };
 export default FeatureSection;
