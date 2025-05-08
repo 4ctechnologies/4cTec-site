@@ -2,7 +2,7 @@ import Link from "next/link";
 
 export default function Footer() {
   return (
-    <footer className='flex flex-col items-center justify-between max-w-7xl mx-auto p-4 bg-background dark:bg-secondary dark:text-white shadow-md'>
+    <footer className='flex flex-col items-center justify-between max-w-7xl mx-auto p-4 bg-white dark:bg-secondary dark:text-white shadow-md'>
       <div>CTA</div>
       <div className='grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 w-full p-4'>
         <div id='socials'>
@@ -163,7 +163,7 @@ export default function Footer() {
           </ul>
         </div>
         <div className='md:col-span-2 lg:col-span-1 flex flex-col items-center justify-center'>
-          <div className='hidden mt-4 mt-8 mt-12 mt-16 mt-20 mt-24 mt-32'></div>
+          <div className='hidden min-h-40 min-h-48 min-h-52 min-h-56 min-h-60 min-h-64 min-h-72'></div>
           <p className='text-sm text-gray-500'>
             Developed by <span className='text-primary'>VangTec</span> Team{" "}
             <br />

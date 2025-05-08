@@ -1,16 +1,14 @@
-import { useState } from "react";
 import FeatureCard from "./FeatureCard";
 import { features } from "@/data/features";
 
 const FeatureSection = () => {
-  const [selectedCard, setSelectedCard] = useState<number | null>(null);
   // create a sliding section with 10 cards in a single line with overflown cards. with two left and right arrows to sctoll card by cards
   // with a 2 or 3 pixel heighe scroll bar with white handle and light gray bar looks like a line
   return (
-    <div className='flex overflow-x-auto scrollbar-thin scrollbar-thumb-gray-300 scrollbar-track-gray-100'>
-      {/* left button to move and select the next card */}
-      <button
-        className='absolute left-0 top-1/2 transform -translate-y-1/2 bg-white rounded-full p-2 shadow-md'
+    //
+    <div className='flex snap-x snap-mandatory scroll-p-4 overflow-x-scroll thin-scroll dark:thin-scroll-dark'>
+      {/* <button
+        className='absolute z-10 left-0 top-1/2 transform -translate-y-1/2 bg-white rounded-full p-2 shadow-md'
         onClick={() => {
           if (selectedCard !== null && selectedCard > 0) {
             setSelectedCard(selectedCard - 1);
@@ -31,9 +29,9 @@ const FeatureSection = () => {
           />
         </svg>
       </button>
-      {/* right button to move and select the next card */}
+      {/* right button to move and select the next card 
       <button
-        className='absolute right-0 top-1/2 transform -translate-y-1/2 bg-white rounded-full p-2 shadow-md'
+        className='absolute z-10 right-0 top-1/2 transform -translate-y-1/2 bg-white rounded-full p-2 shadow-md'
         onClick={() => {
           if (selectedCard !== null && selectedCard < features.length - 1) {
             setSelectedCard(selectedCard + 1);
@@ -53,9 +51,12 @@ const FeatureSection = () => {
             clipRule='evenodd'
           />
         </svg>
-      </button>
+      </button> */}
       {features.map((feature, index) => (
-        <div key={index} className='flex-shrink-0 w-1/5 p-2'>
+        <div
+          key={index}
+          className='flex-shrink-0 w-4/5 p-2 snap-center snap-always'
+        >
           <FeatureCard {...feature} />
         </div>
       ))}

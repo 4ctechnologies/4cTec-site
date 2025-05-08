@@ -17,13 +17,13 @@ const ThemeToggle = () => {
   const activeOption = options.find((option) => option.value === theme);
 
   const handleSelect = (value: string) => {
-    setTheme(value as any);
+    setTheme(value as never);
     setIsOpen(false); // Collapse the menu after selection
   };
 
   return (
     <motion.div
-      className='fixed top-0 bottom-0 right-0 dark:border dark:border-primary rounded-xl flex backdrop-blur-xs flex-col h-fit my-auto items-center'
+      className='fixed top-0 bottom-0 right-0 dark:border dark:border-primary rounded-xl flex backdrop-blur-xs flex-col h-fit my-auto items-center z-50'
       initial={{ translateX: 40 }}
       whileHover={{ translateX: 0 }}
       transition={{ type: "spring", stiffness: 300, damping: 50 }}

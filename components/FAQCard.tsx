@@ -1,6 +1,7 @@
 "use client";
 import { useEffect, useState } from "react";
 import { Add, Remove } from "@mui/icons-material";
+import { motion } from "framer-motion";
 
 export const FAQCard = ({
   question,
@@ -23,9 +24,16 @@ export const FAQCard = ({
   }, [isSelected]);
 
   return (
-    <div className='p-6 flex flex-col items-center'>
+    <motion.div
+      layout
+      transition={{
+        duration: 0.3,
+        ease: "easeInOut",
+      }}
+      className='p-6 flex w-full max-w-5xl mx-auto flex-col items-between'
+    >
       <div
-        className={`flex justify-between w-full ${
+        className={`flex justify-between ${
           expanded ? "cursor-default" : "cursor-pointer"
         }`}
         onClick={onClick}
@@ -33,8 +41,8 @@ export const FAQCard = ({
         <h2 className='text-xl font-bold mb-4'>{question}</h2>
         <span>{expanded ? <Remove /> : <Add />}</span>
       </div>
-      {expanded && <p className='text-gray-600 mb-4'>{answer}</p>}
-    </div>
+      {expanded && <p className='text-gray-600 mb-4 w-11/12'>{answer}</p>}
+    </motion.div>
   );
 };
 export default FAQCard;

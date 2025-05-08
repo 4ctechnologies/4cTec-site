@@ -43,3 +43,29 @@ body {
 
   font-family: var(--font-primary);
 }
+
+.thin-scroll::-webkit-scrollbar {
+  height: 5px;
+  /* 2px height for horizontal scrollbar in WebKit-based browsers (Chrome, Safari, Edge) */
+  width: 5px;
+  /* 2px width for vertical scrollbar (if ever needed on this element) */
+}
+
+.thin-scroll::-webkit-scrollbar-track {
+  background-color: var(--color-gray-500);
+  border-radius: 10px;
+
+  /* Gray track (Tailwind's gray-300 is a good match for "gray") */
+}
+
+.thin-scroll::-webkit-scrollbar-thumb {
+  background-color: #FFFFFF;
+  border-radius: 10px;
+}
+
+
+.thin-scroll::-webkit-scrollbar-thumb:hover {
+  background-color: var(--color-primary);
+}
+
+/* For Firefox */

@@ -1,9 +1,12 @@
+// import { heights } from "@/data/testimonials";
 import { testimonialCards } from "@/types/testimonials";
 import Image from "next/image";
 
 export default function TestimonialCard(props: testimonialCards) {
   return (
-    <div className='flex flex-col items-start justify-between space-y-4 p-4 border border-primary hover:shadow-sm rounded-xl shadow-md'>
+    <div
+      className={`flex row-span-2 h-96 flex-col items-start justify-between space-y-4 p-4 border border-primary hover:shadow-sm rounded-xl  shadow-md`}
+    >
       <Image
         src={props.image}
         alt='Testimonial'

@@ -1,5 +1,5 @@
 
-export const heights = [4,8,12,16,20,24]
+export const heights = [40,48,52,66,60,4]
 export const testimonials = [
   {
     name: 'John Doe',
@@ -41,14 +41,14 @@ export const testimonials = [
         description : 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
         image: '/images/testimonial8.jpg',
     },
-    {
-        name: 'George Harris',
-        description : 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
-        image: '/images/testimonial9.jpg',
-    },
-    {
-        name: 'Hannah Ives',
-        description : 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
-        image: '/images/testimonial10.jpg',
-    },
+    // {
+    //     name: 'George Harris',
+    //     description : 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
+    //     image: '/images/testimonial9.jpg',
+    // },
+    // {
+    //     name: 'Hannah Ives',
+    //     description : 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
+    //     image: '/images/testimonial10.jpg',
+    // },
 ]

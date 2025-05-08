@@ -9,7 +9,7 @@ export const Plans = [
             "Feature 3",
             "Feature 4",
         ],
-        description: "Basic plan description",
+        description: "lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
         buttonText: "Get Started",
         link: "/signup",
     },
@@ -22,7 +22,7 @@ export const Plans = [
             "Feature 3",
             "Feature 4",
         ],
-        description: "Pro plan description",
+        description: "lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
         buttonText: "Get Started",
         link: "/signup",        
     },
@@ -33,8 +33,8 @@ export const Plans = [
             "Feature 2",
             "Feature 3",
             "Feature 4",
-        ],
-        description: "Enterprise plan description",
+        ],        description: "lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
+
         buttonText: "Plese Contact Us",
         link: "/contact",},
 ];
