@@ -1,3 +1,4 @@
+"use client";
 import { blog } from "@/types/blogs";
 import { motion } from "framer-motion";
 import Link from "next/link";
@@ -9,6 +10,19 @@ export const BlogCard = (props: blog) => {
   const handleHover = () => {
     setIsHovered(!isHovered);
   };
+  const parentVariants = {
+    hidden: { opacity: 0 },
+    visible: {
+      opacity: 1,
+      transition: {
+        staggerChildren: 0.2,
+      },
+    },
+  };
+  const childVarients = {
+    hidden: { opacity: 0, x: 20 },
+    visible: { opacity: 1, x: 0 },
+  };
   return (
     <motion.div
       className={`relative flex flex-col items-center justify-center w-full p-4 rounded-lg ${
@@ -16,6 +30,7 @@ export const BlogCard = (props: blog) => {
       }  max-w-[300px] h-[400px]`}
       onMouseEnter={handleHover}
       onMouseLeave={handleHover}
+      layout
     >
       <motion.h2
         className='w-2/3 absolute top-5 left-[-20px] bg-white dark:bg-secondary text-2xl font-bold text-secondary dark:text-white p-2 rounded-r-lg shadow-md'
@@ -40,16 +55,33 @@ export const BlogCard = (props: blog) => {
         {props.date}
       </h3>
       {isHovered && (
-        <motion.p
-          initial={{ opacity: 0, y: 10 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.2 }}
-          className='mt-2 text-white'
+        <motion.div
+          variants={parentVariants}
+          initial='hidden'
+          animate='visible'
+          className='w-full flex flex-col'
         >
-          {props.description}
-        </motion.p>
+          <motion.p
+            variants={childVarients}
+            transition={{ duration: 0.2 }}
+            className='mt-2 text-white'
+          >
+            {props.description}
+          </motion.p>
+          <motion.div
+            variants={childVarients}
+            transition={{ duration: 0.2 }}
+            className='flex items-center justify-center'
+          >
+            <Link
+              className='w-full bg-white dark:bg-secondary py-2 px-1 mt-2 rounded-lg text-center '
+              href={`/blogs/${props.id}`}
+            >
+              Read more
+            </Link>
+          </motion.div>
+        </motion.div>
       )}
-      <Link className="w-full bg-white dark:bg-secondary " href={`\blogs\${props.id}`}>Read more</Link>
     </motion.div>
   );
 };

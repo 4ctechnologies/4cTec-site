@@ -7,7 +7,7 @@ export default function Footer() {
       <div className='grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 w-full p-4'>
         <div id='socials'>
           <ul className='flex items-center justify-start space-x-0'>
-            <li className='fill-none hover:fill-primary stroke-primary transition duration-300 ease-in-out'>
+            <li className='fill-none hover:fill-primary stroke-primary transition duration-300 ease-in-out w-12 h-12'>
               <a
                 href='https://www.linkedin.com/vangtec/'
                 target='_blank'
@@ -16,8 +16,8 @@ export default function Footer() {
                 <svg
                   xmlns='http://www.w3.org/2000/svg'
                   viewBox='0 0 50 50'
-                  width='50px'
-                  height='50px'
+                  width='full'
+                  height='full'
                 >
                   <path
                     style={{
@@ -61,7 +61,7 @@ export default function Footer() {
                 </svg>
               </a>
             </li>
-            <li className='hover:fill-primary fill-white dark:fill-secondary stroke-primary transition duration-300 ease-in-out'>
+            <li className='hover:fill-primary fill-white dark:fill-secondary stroke-primary transition duration-300 ease-in-out w-12 h-12'>
               <a
                 href='https://www.facebook.com/vangtec/'
                 target='_blank'
@@ -70,8 +70,8 @@ export default function Footer() {
                 <svg
                   xmlns='http://www.w3.org/2000/svg'
                   viewBox='0 0 50 50'
-                  width='50px'
-                  height='50px'
+                  width='full'
+                  height='full'
                 >
                   <path
                     style={{
@@ -84,7 +84,7 @@ export default function Footer() {
                 </svg>
               </a>
             </li>
-            <li className='fill-white dark:fill-secondary hover:fill-primary stroke-primary transition duration-300 ease-in-out'>
+            <li className='fill-white dark:fill-secondary hover:stroke-white dark:hover:stroke-secondary hover:fill-primary stroke-primary transition duration-300 ease-in-out w-12 h-12'>
               {/* Instagram */}
               <a
                 href='https://www.instagram.com/vangtec/'
@@ -95,8 +95,8 @@ export default function Footer() {
                   className='group'
                   xmlns='http://www.w3.org/2000/svg'
                   viewBox='0 0 50 50'
-                  width='50px'
-                  height='50px'
+                  width='full'
+                  height='full'
                 >
                   <path
                     style={{ strokeWidth: 1, strokeMiterlimit: 10 }}
@@ -118,7 +118,7 @@ export default function Footer() {
                 </svg>
               </a>
             </li>
-            <li className=' stroke-primary hover:fill-primary  fill-white dark:fill-secondary transition duration-300 ease-in-out'>
+            <li className=' stroke-primary hover:fill-primary hover:stroke-white dark:hover:stroke-secondary  fill-white dark:fill-secondary transition duration-300 ease-in-out w-12 h-12'>
               <a
                 href='https://www.youtube.com/@vangtec/'
                 target='_blank'
@@ -127,8 +127,8 @@ export default function Footer() {
                 <svg
                   xmlns='http://www.w3.org/2000/svg'
                   viewBox='0 0 50 50'
-                  width='50px'
-                  height='50px'
+                  width='full'
+                  height='full'
                   className='group'
                 >
                   <g>

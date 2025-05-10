@@ -15,10 +15,10 @@ export default async function Header() {
               <Link href='/'>About</Link>
             </li>
             <li className='hover:text-primary transition duration-300 ease-in-out py-3 px-5 border-2 border-white hover:border-primary dark:border-secondary rounded-xl'>
-              <Link href='/'>Blogs</Link>
+              <Link href='/blogs/1'>Blogs</Link>
             </li>
             <li className='hover:text-primary transition duration-300 ease-in-out py-3 px-5 border-2 border-white hover:border-primary dark:border-secondary rounded-xl'>
-              <Link href='/'>Contact</Link>
+              <Link href='/contact'>Contact</Link>
             </li>
             <li className='bg-theme-white text-black rounded-xl px-5 py-3 hover:bg-primary hover:text-white transition duration-300 ease-in-out'>
               {!session ? (

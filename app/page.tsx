@@ -12,6 +12,7 @@ import FeatureSection from "@/components/FeatureSection";
 import Image from "next/image";
 import { blogs } from "@/data/blogs";
 import { BlogCard } from "@/components/BlogCard";
+import { MoreButton } from "@/components/MoreButton";
 
 export default function Home() {
   const parentVariants = {
@@ -343,12 +344,12 @@ export default function Home() {
           )}
         </div>
       </section>
-      <section className='w-full gap-4 min-h-lvh flex flex-col justify-center items-center'>
+      <section className='w-full gap-4 min-h-lvh flex flex-col justify-center items-center pb-20'>
         <h1 className='text-7xl font-bold text-center py-20'>
           Book your musical journy <cite>now</cite>
         </h1>
         <motion.div
-          className='grid grid-cols-1 md:grid-cols-3 gap-4 w-full'
+          className='grid grid-cols-1 md:grid-cols-3 gap-4 space-y-8 w-full align-center justify-items-center'
           variants={blogParentVarient}
           initial='hidden'
           animate='visible'
@@ -359,6 +360,7 @@ export default function Home() {
             // load only 3 blogs if the showAllBlogs set to false and if it's true show all the blogs
             showAllBlogs ? (
               <motion.div
+                className='w-fit'
                 key={index}
                 variants={blogChildVarient}
                 transition={{
@@ -370,6 +372,7 @@ export default function Home() {
               </motion.div>
             ) : index < 3 ? (
               <motion.div
+                className='w-fit'
                 key={index}
                 variants={blogChildVarient}
                 transition={{
@@ -383,11 +386,11 @@ export default function Home() {
           )}
         </motion.div>
         {!showAllBlogs && (
-          <button onClick={() => setShowAllBlogs(!showAllBlogs)}>More</button>
+          <MoreButton buttonClick={() => setShowAllBlogs(true)} />
         )}
       </section>
       <section className='w-full gap-4 min-h-lvh  bg-[url("https://placehold.co/600x400?text=Placeholder")] bg-cover bg-center bg-no-repeat'>
-        <div className='flex flex-col justify-center items-center bg-radial from-10% from-transparent to-white dark:to-secondary to-95%  text-white'>
+        <div className='flex flex-col justify-center items-center bg-radial from-10% from-transparent to-white dark:to-secondary to-80%  text-white'>
           <h1 className='pt-40 text-6xl text-secondary dark:text-white'>
             Got a Question?
           </h1>
