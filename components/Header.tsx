@@ -1,9 +1,11 @@
 import Link from "next/link";
+import { auth, signIn, signOut } from "@/auth";
 
-export default function Header() {
+export default async function Header() {
+  const session = await auth();
   return (
     <header className='w-full'>
-      <div className='flex items-center justify-between max-w-[1600px] p-4 bg-white dark:bg-secondary dark:text-white shadow-md fixed top-0 z-10 mx-auto left-0 right-0'>
+      <div className='flex items-center justify-between max-w-[1600px] p-4 bg-white dark:bg-secondary dark:text-white fixed top-0 z-10 mx-auto left-0 right-0'>
         <div className='flex items-center w-1/2'>
           <h1 className='ml-2 text-2xl font-bold'>VangTec</h1>
         </div>
@@ -19,9 +21,25 @@ export default function Header() {
               <Link href='/'>Contact</Link>
             </li>
             <li className='bg-theme-white text-black rounded-xl px-5 py-3 hover:bg-primary hover:text-white transition duration-300 ease-in-out'>
-              <Link href='/login' className='text-nowrap'>
-                Apply now
-              </Link>
+              {!session ? (
+                <form
+                  action={async () => {
+                    "use server";
+                    await signIn("asgardeo", { prompt: "login" });
+                  }}
+                >
+                  <button type='submit'>Apply Now</button>
+                </form>
+              ) : (
+                <form
+                  action={async () => {
+                    "use server";
+                    await signOut();
+                  }}
+                >
+                  <button type='submit'>Logout</button>
+                </form>
+              )}
             </li>
           </ul>
         </nav>

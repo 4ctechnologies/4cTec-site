@@ -10,6 +10,8 @@ import { useEffect, useState } from "react";
 import { ArrowBack, ArrowForward } from "@mui/icons-material";
 import FeatureSection from "@/components/FeatureSection";
 import Image from "next/image";
+import { blogs } from "@/data/blogs";
+import { BlogCard } from "@/components/BlogCard";
 
 export default function Home() {
   const parentVariants = {
@@ -31,6 +33,7 @@ export default function Home() {
       change: {},
     },
   };
+  const [showAllBlogs, setShowAllBlogs] = useState(false);
   const [testimonialGroup, setTestimonialGroup] = useState<1 | 2>(1);
   const childVarientsColumn = {
     hidden: { opacity: 0, y: 100 },
@@ -45,6 +48,20 @@ export default function Home() {
   const childVarientsRow = {
     hidden: { opacity: 0, x: 100 },
     visible: { opacity: 1, x: 0 },
+    change: { opacity: 1, x: 0 },
+  };
+  const blogParentVarient = {
+    hidden: { opacity: 0, y: 100 },
+    visible: {
+      opacity: 1,
+      transition: {
+        staggerChildren: 0.2,
+      },
+    },
+  };
+  const blogChildVarient = {
+    hidden: { opacity: 0, y: 30 },
+    visible: { opacity: 1, y: 0 },
   };
 
   const [screenWidth, setScreenWidth] = useState<number | null>(null);
@@ -326,6 +343,49 @@ export default function Home() {
           )}
         </div>
       </section>
+      <section className='w-full gap-4 min-h-lvh flex flex-col justify-center items-center'>
+        <h1 className='text-7xl font-bold text-center py-20'>
+          Book your musical journy <cite>now</cite>
+        </h1>
+        <motion.div
+          className='grid grid-cols-1 md:grid-cols-3 gap-4 w-full'
+          variants={blogParentVarient}
+          initial='hidden'
+          animate='visible'
+          whileInView={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.5, ease: easeInOut }}
+        >
+          {blogs.map((blog, index) =>
+            // load only 3 blogs if the showAllBlogs set to false and if it's true show all the blogs
+            showAllBlogs ? (
+              <motion.div
+                key={index}
+                variants={blogChildVarient}
+                transition={{
+                  duration: 0.5,
+                  ease: easeInOut,
+                }}
+              >
+                <BlogCard {...blog} />
+              </motion.div>
+            ) : index < 3 ? (
+              <motion.div
+                key={index}
+                variants={blogChildVarient}
+                transition={{
+                  duration: 0.5,
+                  ease: easeInOut,
+                }}
+              >
+                <BlogCard {...blog} />
+              </motion.div>
+            ) : null
+          )}
+        </motion.div>
+        {!showAllBlogs && (
+          <button onClick={() => setShowAllBlogs(!showAllBlogs)}>More</button>
+        )}
+      </section>
       <section className='w-full gap-4 min-h-lvh  bg-[url("https://placehold.co/600x400?text=Placeholder")] bg-cover bg-center bg-no-repeat'>
         <div className='flex flex-col justify-center items-center bg-radial from-10% from-transparent to-white dark:to-secondary to-95%  text-white'>
           <h1 className='pt-40 text-6xl text-secondary dark:text-white'>
@@ -335,12 +395,6 @@ export default function Home() {
             <FAQSection />
           </div>
         </div>
-      </section>
-      <section>
-        <h1>
-          Book your musical journy <cite>now</cite>
-        </h1>
-        {/* Blog section */}
       </section>
     </>
   );
