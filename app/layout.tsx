@@ -1,9 +1,6 @@
 import type { Metadata } from "next";
 import { Inter, Poppins } from "next/font/google";
 import "./globals.css";
-import Header from "@/components/Header";
-import Footer from "@/components/Footer";
-import ThemeToggle from "@/components/DarkModeToggle";
 
 const inter = Inter({
   subsets: ["latin"],
@@ -31,12 +28,9 @@ export default function RootLayout({
       <body
         className={`${inter.variable} ${poppins.variable}} antialiased bg-white dark:bg-secondary`}
       >
-        <Header />
-        <ThemeToggle />
         <main className='max-w-[1600px] dark:text-white mx-auto'>
           {children}
         </main>
-        <Footer />
       </body>
     </html>
   );
