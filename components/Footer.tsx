@@ -9,7 +9,7 @@ export default function Footer() {
           <ul className='flex items-center justify-start space-x-0'>
             <li className='fill-none hover:fill-primary stroke-primary transition duration-300 ease-in-out w-12 h-12'>
               <a
-                href='https://www.linkedin.com/vangtec/'
+                href='https://www.linkedin.com/4CTechnologies/'
                 target='_blank'
                 rel='noopener noreferrer'
               >
@@ -63,7 +63,7 @@ export default function Footer() {
             </li>
             <li className='hover:fill-primary fill-white dark:fill-secondary stroke-primary transition duration-300 ease-in-out w-12 h-12'>
               <a
-                href='https://www.facebook.com/vangtec/'
+                href='https://www.facebook.com/4CTechnologies/'
                 target='_blank'
                 rel='noopener noreferrer'
               >
@@ -87,7 +87,7 @@ export default function Footer() {
             <li className='fill-white dark:fill-secondary hover:stroke-white dark:hover:stroke-secondary hover:fill-primary stroke-primary transition duration-300 ease-in-out w-12 h-12'>
               {/* Instagram */}
               <a
-                href='https://www.instagram.com/vangtec/'
+                href='https://www.instagram.com/4CTechnologies/'
                 target='_blank'
                 rel='noopener noreferrer'
               >
@@ -120,7 +120,7 @@ export default function Footer() {
             </li>
             <li className=' stroke-primary hover:fill-primary hover:stroke-white dark:hover:stroke-secondary  fill-white dark:fill-secondary transition duration-300 ease-in-out w-12 h-12'>
               <a
-                href='https://www.youtube.com/@vangtec/'
+                href='https://www.youtube.com/@4CTechnologies/'
                 target='_blank'
                 rel='noopener noreferrer'
               >
@@ -151,7 +151,8 @@ export default function Footer() {
           <ul className='flex items-center justify-center list-disc text-nowrap gap-8'>
             <li className='list-none'>
               <p className='text-sm text-gray-500'>
-                &copy; {new Date().getFullYear()} <Link href='/'>VangTec.</Link>
+                &copy; {new Date().getFullYear()}{" "}
+                <Link href='/'>4CTechnologies.</Link>
               </p>
             </li>
             <li className='hover:text-primary transition duration-300 ease-in-out'>
@@ -165,11 +166,17 @@ export default function Footer() {
         <div className='md:col-span-2 lg:col-span-1 flex flex-col items-center justify-center'>
           <div className='hidden min-h-40 min-h-48 min-h-52 min-h-56 min-h-60 min-h-64 min-h-72'></div>
           <p className='text-sm text-gray-500'>
-            Developed by <span className='text-primary'>VangTec</span> Team{" "}
-            <br />
+            Developed by <span className='text-primary'>4CTechnologies</span>{" "}
+            Team <br />
             <span className='text-xs text-gray-400'>All rights reserved.</span>
           </p>
         </div>
+      </div>
+      <div className='w-full px-4 flex justify-center items-center text-xs font-extralight'>
+        <p>
+          This site may use cookies and other browser data to provode a better
+          user experience. For more info visit privacy policy page
+        </p>
       </div>
     </footer>
   );

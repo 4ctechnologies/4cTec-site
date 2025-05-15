@@ -134,8 +134,12 @@ export default function DevicesPage() {
             <TabsTrigger value='network'>Network</TabsTrigger>
           </TabsList>
 
-          <div className='flex items-center space-x-2'>
-            <Button variant='outline' size='sm'>
+          <div className='flex items-center space-x-2 '>
+            <Button
+              variant='outline'
+              size='sm'
+              className='bg-primary/10 dark:bg-primary '
+            >
               <Settings className='mr-2 h-4 w-4' /> Configure
             </Button>
           </div>

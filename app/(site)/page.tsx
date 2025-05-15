@@ -13,6 +13,8 @@ import Image from "next/image";
 import { blogs } from "@/data/blogs";
 import { BlogCard } from "@/components/BlogCard";
 import { MoreButton } from "@/components/MoreButton";
+import { useTheme } from "@/context/ThemeContext";
+import clsx from "clsx";
 
 export default function Home() {
   const parentVariants = {
@@ -36,6 +38,7 @@ export default function Home() {
   };
   const [showAllBlogs, setShowAllBlogs] = useState(false);
   const [testimonialGroup, setTestimonialGroup] = useState<1 | 2>(1);
+  const { isDark } = useTheme();
   const childVarientsColumn = {
     hidden: { opacity: 0, y: 100 },
     visible: { opacity: 1, y: 0 },
@@ -85,10 +88,17 @@ export default function Home() {
 
   return (
     <>
-      <section className='mt-4 grid grid-cols-1 md:grid-cols-2 w-full min-h-lvh bg-[url(https://placehold.co/600x400?text=Placeholder)] bg-cover bg-center bg-no-repeat  text-secondary dark:text-white'>
+      <section
+        className={clsx(
+          "mt-4 grid grid-cols-1 md:grid-cols-2 w-full min-h-lvh",
+          isDark ? "bg-[url('/Hero.png')]" : "bg-[url('/Hero-Light.png')]",
+          "bg-cover bg-center bg-no-repeat  text-secondary dark:text-white"
+        )}
+      >
         <motion.div className='flex flex-col gap-8 max-w-[640px] ml-auto'>
           <motion.div
-            className='bg-white/15 h-5/7 flex flex-col gap-4  justify-end p-4'
+            className='h-5/7 flex flex-col gap-4  justify-end p-4'
+            // className='bg-white/15 h-5/7 flex flex-col gap-4  justify-end p-4'
             initial={{ opacity: 0, y: -50 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.2 }}
@@ -115,7 +125,8 @@ export default function Home() {
           </div>
         </motion.div>
         <motion.div
-          className='h-3/7 bg-white/15 self-end max-w-[640px] mr-a'
+          // className='h-3/7 bg-white/15 self-end max-w-[640px] mr-a'
+          className='h-3/7 self-end max-w-[640px] mr-a'
           initial={{ opacity: 0, y: 50 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.2 }}
@@ -156,7 +167,7 @@ export default function Home() {
             </Link>
           </div>
         </motion.div>
-        <div className="bg-[url('https://placehold.co/600x400?text=Placeholder')] bg-cover bg-center bg-no-repeat  w-full h-full text-white"></div>
+        <div className="bg-[url('/aboutus.png')] bg-cover bg-center bg-no-repeat  w-full h-full text-white"></div>
       </section>
       <motion.section
         className='py-48 flex flex-col gap-4 w-full min-h-lvh  justify-center items-center bg-white text-secondary dark:bg-secondary dark:text-white'

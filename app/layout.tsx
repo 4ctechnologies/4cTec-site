@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { Inter, Poppins } from "next/font/google";
 import "./globals.css";
+import { ThemeProvider } from "@/context/ThemeContext";
 
 const inter = Inter({
   subsets: ["latin"],
@@ -14,9 +15,9 @@ const poppins = Poppins({
 });
 
 export const metadata: Metadata = {
-  title: "Welcome to VangTec",
+  title: "Welcome to 4CTechnologies",
   description:
-    "VangTec is a software development company that specializes in AI based IoT solutions.",
+    "4CTechnologies is a software development company that specializes in AI based IoT solutions.",
 };
 export default function RootLayout({
   children,
@@ -28,9 +29,11 @@ export default function RootLayout({
       <body
         className={`${inter.variable} ${poppins.variable}} antialiased bg-white dark:bg-secondary`}
       >
-        <main className='max-w-[1600px] dark:text-white mx-auto'>
-          {children}
-        </main>
+        <ThemeProvider>
+          <main className='max-w-[1600px] dark:text-white mx-auto'>
+            {children}
+          </main>
+        </ThemeProvider>
       </body>
     </html>
   );

@@ -54,7 +54,7 @@ export default function CameraPage() {
               checked={aiDetection}
               onCheckedChange={setAiDetection}
             />
-            <Label htmlFor='ai-detection'>AI Detection</Label>
+            <Label htmlFor='ai-detection'>AI Detection<sub>Powerd by NVIDIA</sub></Label>
           </div>
         </div>
       </div>
@@ -110,7 +110,7 @@ export default function CameraPage() {
 
               {aiDetection && (
                 <div className='absolute top-4 right-4 bg-primary/90 text-white text-xs px-2 py-1 rounded'>
-                  NVIDIA AI Active
+                  AI is Active
                 </div>
               )}
 

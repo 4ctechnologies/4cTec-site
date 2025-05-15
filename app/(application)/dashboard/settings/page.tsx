@@ -44,6 +44,7 @@ import { useTheme } from "@/hooks/useTheme";
 export default function SettingsPage() {
   const { theme, setTheme } = useTheme();
   const [isLoading, setIsLoading] = useState(false);
+  const [interval, setInterval] = useState(30);
 
   const handleToggleTheme = () => {
     setTheme(theme === "dark" ? "light" : "dark");
@@ -216,9 +217,17 @@ export default function SettingsPage() {
                     <Label htmlFor='refresh-interval'>
                       Refresh Interval (seconds)
                     </Label>
-                    <span className='text-sm text-muted-foreground'>30s</span>
+                    <span className='text-sm text-muted-foreground'>
+                      {interval}s
+                    </span>
                   </div>
-                  <Slider defaultValue={[30]} min={5} max={60} step={5} />
+                  <Slider
+                    defaultValue={[interval]}
+                    min={5}
+                    max={60}
+                    step={5}
+                    onValueChange={(value) => setInterval(value[0])}
+                  />
                 </div>
               </div>
 
@@ -715,9 +724,9 @@ export default function SettingsPage() {
                     <div className='flex items-center space-x-2'>
                       <Badge
                         variant='outline'
-                        className='bg-green-500/10 text-green-500 hover:bg-green-500/20'
+                        className='bg-yellow-500/10 text-yellow-500 hover:bg-green-500/20'
                       >
-                        Connected
+                        Warning!
                       </Badge>
                       <Button variant='outline' size='sm'>
                         Configure

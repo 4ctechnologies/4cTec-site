@@ -58,7 +58,7 @@ export function DashboardHeader() {
             <Input
               type='search'
               placeholder='Search...'
-              className='pl-8 bg-background border-none focus-visible:ring-1 focus-visible:ring-primary'
+              className='pl-8 bg-primary/15 border-none focus-visible:ring-1 focus-visible:ring-primary'
             />
           </div>
         </div>
@@ -73,7 +73,7 @@ export function DashboardHeader() {
                 </Badge>
               </Button>
             </DropdownMenuTrigger>
-            <DropdownMenuContent align='end' className='w-80'>
+            <DropdownMenuContent align='end' className='w-80 '>
               <DropdownMenuLabel>Notifications</DropdownMenuLabel>
               <DropdownMenuSeparator />
               <DropdownMenuItem className='cursor-pointer'>

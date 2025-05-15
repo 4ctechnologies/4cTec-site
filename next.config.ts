@@ -5,7 +5,7 @@ const nextConfig: NextConfig = {
 };
 module.exports = {
   images: {
-    remotePatterns: [new URL('https://placehold.co/600x400?text=Placeholder')],
+    remotePatterns: [new URL('https://placehold.co/600x400?text=Placeholder'),new URL('https://lh3.googleusercontent.com/**')],
   },
 }
 

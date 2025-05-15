@@ -18,6 +18,7 @@ export const useTheme = () => {
     const useDark = newTheme === 'dark' || (newTheme === 'system' && isSystemDark)
     root.classList.toggle('dark', useDark)
     setIsDark(useDark)
+    console.log("Theme updated:", { newTheme, isDark });
   }
 
   useEffect(() => {

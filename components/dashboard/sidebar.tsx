@@ -18,6 +18,9 @@ import {
 import { cn } from "@/lib/utils";
 import { Button } from "@/components/ui/button";
 import { useState, useEffect } from "react";
+import { useSession } from "next-auth/react";
+import Image from "next/image";
+import { signOut } from "next-auth/react";
 
 const navItems = [
   {
@@ -61,6 +64,11 @@ export function DashboardSidebar() {
   const pathname = usePathname();
   const [isOpen, setIsOpen] = useState(false);
   const [isCollapsed, setIsCollapsed] = useState(false);
+  const { data: session } = useSession();
+  async function handleSignOut() {
+    await signOut();
+    window.location.href = "/";
+  }
 
   // Check if we're on mobile based on window width
   const [isMobile, setIsMobile] = useState(false);
@@ -113,11 +121,7 @@ export function DashboardSidebar() {
         className='fixed top-4 left-4 z-50 md:hidden'
         onClick={() => setIsOpen(!isOpen)}
       >
-        {isOpen ? (
-          <X className='fixed top-8 left-80 h-20 w-20' />
-        ) : (
-          <Menu className='h-6 w-6' />
-        )}
+        {isOpen ? "" : <Menu className='h-6 w-6' />}
       </Button>
 
       {/* Desktop collapse button */}
@@ -146,7 +150,7 @@ export function DashboardSidebar() {
 
       <div
         className={cn(
-          "fixed inset-y-0 left-0 z-40 bg-card border-r border-primary transform transition-all duration-300 ease-in-out",
+          "absolute inset-y-0 left-0 z-40 bg-card border-r border-primary transform transition-all duration-300 ease-in-out",
           // Mobile states
           isMobile &&
             (isOpen ? "translate-x-0 border-none w-full" : "-translate-x-full"),
@@ -170,6 +174,12 @@ export function DashboardSidebar() {
                 <p className='text-muted-foreground text-sm'>
                   Enterprise IoT Dashboard
                 </p>
+                {isMobile && (
+                  <X
+                    className='fixed top-4 right-4 h-12 w-12'
+                    onClick={() => setIsOpen(false)}
+                  />
+                )}
               </>
             )}
           </div>
@@ -209,28 +219,49 @@ export function DashboardSidebar() {
               </Link>
             ))}
           </nav>
-
-          <div className={cn("p-6", isCollapsed && !isMobile && "p-4")}>
-            {isCollapsed && !isMobile ? (
-              <div className='flex justify-center'>
-                <div className='w-10 h-10 rounded-full bg-primary/20 flex items-center justify-center'>
-                  <span className='text-primary font-medium'>AT</span>
+          <Link href={"/dashboard/profile"}>
+            <div className={cn("p-6", isCollapsed && !isMobile && "p-4")}>
+              {isCollapsed && !isMobile ? (
+                <div className='flex justify-center'>
+                  <div className='min-w-8 min-h-8 rounded-full bg-primary/20 flex items-center justify-center'>
+                    <Image
+                      src={session?.user?.picture || "/placeholder.png"}
+                      alt={session?.user?.username || "Profile"}
+                      height={100}
+                      width={100}
+                      className='rounded-full'
+                    />
+                  </div>
                 </div>
-              </div>
-            ) : (
-              <div className='flex items-center space-x-3'>
-                <div className='w-10 h-10 rounded-full bg-primary/20 flex items-center justify-center'>
-                  <span className='text-primary font-medium'>AT</span>
+              ) : (
+                <div className='flex items-center space-x-1'>
+                  <div className='min-w-8 min-h-8 rounded-full bg-primary/20 flex items-center justify-center'>
+                    <Image
+                      src={session?.user?.picture || "/placeholder.png"}
+                      alt={session?.user?.username || "Profile"}
+                      height={100}
+                      width={100}
+                      className='rounded-full'
+                    />
+                  </div>
+                  <div>
+                    <p className='text-sm font-medium'>
+                      {session?.user?.username}
+                    </p>
+                    <p className='text-xs text-muted-foreground'>
+                      {session?.user?.email}
+                    </p>
+                  </div>
                 </div>
-                <div>
-                  <p className='text-sm font-medium'>Admin User</p>
-                  <p className='text-xs text-muted-foreground'>
-                    admin@4ctech.com
-                  </p>
-                </div>
-              </div>
-            )}
-          </div>
+              )}
+            </div>
+          </Link>
+          <Button
+            className='m-4 mt-0 cursor-pointer hover:bg-primary/75'
+            onClick={handleSignOut}
+          >
+            Sign out
+          </Button>
         </div>
       </div>
     </>
