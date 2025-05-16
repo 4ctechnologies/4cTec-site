@@ -31,7 +31,7 @@ export const { handlers, signIn, signOut, auth } = NextAuth({
         token.name=profile.name;
 
       }
-
+      // console.log({token,profile})
       return token;
     },
     async session({ session, token }) {            
@@ -45,14 +45,14 @@ export const { handlers, signIn, signOut, auth } = NextAuth({
         session.user.email_verified = token.email_verified as string;
         session.user.picture = token.picture as string;
       }
-
+      // console.log("Session Callback:", { session, token });
       return session;
     },
-    authorized: async ({request,auth})=>{
-      if (!auth){
-        return Response.redirect(new URL("/",request.nextUrl))
-      }
-      return !auth
-    }
+    // authorized: async ({request,auth})=>{
+    //   if (!auth){
+    //     return Response.redirect(new URL("/",request.nextUrl))
+    //   }
+    //   return !auth
+    // }
   }
 })

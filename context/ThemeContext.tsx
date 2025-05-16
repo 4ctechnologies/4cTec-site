@@ -29,7 +29,7 @@ export const ThemeProvider = ({ children }: { children: React.ReactNode }) => {
       newTheme === "dark" || (newTheme === "system" && isSystemDark);
     root.classList.toggle("dark", useDark);
     setIsDark(useDark);
-    console.log("Theme updated:", { newTheme, useDark });
+
   };
 
   useEffect(() => {

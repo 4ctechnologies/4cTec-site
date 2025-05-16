@@ -1,9 +1,9 @@
+"use client";
 import Link from "next/link";
 
 export default function Footer() {
   return (
     <footer className='flex pt-20 flex-col items-center justify-between max-w-7xl mx-auto p-4 bg-white dark:bg-secondary dark:text-white shadow-md'>
-      <div>CTA</div>
       <div className='grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 w-full p-4'>
         <div id='socials'>
           <ul className='flex items-center justify-start space-x-0'>
@@ -148,7 +148,7 @@ export default function Footer() {
           </ul>
         </div>
         <div id='Copyright & leagal'>
-          <ul className='flex items-center justify-center list-disc text-nowrap gap-8'>
+          <ul className='flex flex-col sm:flex-row items-center justify-center list-disc text-nowrap space-x-8 space-y-4'>
             <li className='list-none'>
               <p className='text-sm text-gray-500'>
                 &copy; {new Date().getFullYear()}{" "}

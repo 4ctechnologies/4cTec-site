@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { Inter, Poppins } from "next/font/google";
 import "./globals.css";
 import { ThemeProvider } from "@/context/ThemeContext";
+import { SessionProvider } from "next-auth/react";
 
 const inter = Inter({
   subsets: ["latin"],
@@ -30,9 +31,11 @@ export default function RootLayout({
         className={`${inter.variable} ${poppins.variable}} antialiased bg-white dark:bg-secondary`}
       >
         <ThemeProvider>
-          <main className='max-w-[1600px] dark:text-white mx-auto'>
-            {children}
-          </main>
+          <SessionProvider>
+            <main className='max-w-svw md:max-w-[1600px] w-dvw dark:text-white mx-auto overflow-x-hidden'>
+              {children}
+            </main>
+          </SessionProvider>
         </ThemeProvider>
       </body>
     </html>

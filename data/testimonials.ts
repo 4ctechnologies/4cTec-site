@@ -4,51 +4,51 @@ export const testimonials = [
   {
     name: 'John Doe',
     description : 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
-    image: '/images/testimonial1.jpg',
+    image: '/testimonial/1.png',
   },
   {
     name: 'Jane Smith',
     description : 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
-    image: '/images/testimonial2.jpg',
+    image: '/testimonial/2.png',
   },
     {
         name: 'Alice Johnson',
         description : 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
-        image: '/images/testimonial3.jpg',
+        image: '/testimonial/3.png',
     },
     {
         name: 'Bob Brown',
         description : 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
-        image: '/images/testimonial4.jpg',
+        image: '/testimonial/4.png',
     },
     {
         name: 'Charlie Davis',
         description : 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
-        image: '/images/testimonial5.jpg',
+        image: '/testimonial/5.png',
     },
     {
         name: 'Diana Evans',
         description : 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
-        image: '/images/testimonial6.jpg',
+        image: '/testimonial/6.png',
     },
     {
         name: 'Ethan Foster',
         description : 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
-        image: '/images/testimonial7.jpg',
+        image: '/testimonial/7.png',
     },
     {
         name: 'Fiona Green',
         description : 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
-        image: '/images/testimonial8.jpg',
+        image: '/testimonial/8.png',
     },
     // {
     //     name: 'George Harris',
     //     description : 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
-    //     image: '/images/testimonial9.jpg',
+    //     image: '/testimonial/9.png',
     // },
     // {
     //     name: 'Hannah Ives',
     //     description : 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
-    //     image: '/images/testimonial10.jpg',
+    //     image: '/testimonial/10.png',
     // },
 ]

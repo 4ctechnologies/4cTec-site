@@ -15,6 +15,7 @@ import { BlogCard } from "@/components/BlogCard";
 import { MoreButton } from "@/components/MoreButton";
 import { useTheme } from "@/context/ThemeContext";
 import clsx from "clsx";
+import RotatingGradientButton from "@/components/AnimatedButton";
 
 export default function Home() {
   const parentVariants = {
@@ -73,7 +74,6 @@ export default function Home() {
     if (typeof window !== "undefined") {
       const handleResize = () => {
         setScreenWidth(window.innerWidth);
-        console.log(window.innerWidth);
       };
       handleResize(); // Call it once to set the initial value
       window.addEventListener("resize", handleResize);
@@ -132,7 +132,7 @@ export default function Home() {
           transition={{ duration: 0.2 }}
         ></motion.div>
       </section>
-      <section className='grid grid-cols-1 md:grid-cols-2 w-full min-h-lvh'>
+      <section className='grid grid-cols-1 md:grid-cols-2 w-full min-h-lvh space-y-4 mt-20 sm:mt-0'>
         <motion.div
           className='w-full self-center flex flex-col space-y-8'
           whileInView={{ opacity: 1, y: 0 }}
@@ -167,10 +167,10 @@ export default function Home() {
             </Link>
           </div>
         </motion.div>
-        <div className="bg-[url('/aboutus.png')] bg-cover bg-center bg-no-repeat  w-full h-full text-white"></div>
+        <div className="bg-[url('/aboutus.png')] bg-cover bg-center bg-no-repeat  w-full h-[50vh] sm:h-full text-white"></div>
       </section>
       <motion.section
-        className='py-48 flex flex-col gap-4 w-full min-h-lvh  justify-center items-center bg-white text-secondary dark:bg-secondary dark:text-white'
+        className='py-20 sm:py-48 flex flex-col gap-4 w-full min-h-lvh  justify-center items-center bg-white text-secondary dark:bg-secondary dark:text-white'
         whileInView={{ opacity: 1, y: 0 }}
         initial={{ opacity: 0, y: 100 }}
         transition={{ duration: 0.5 }}
@@ -178,7 +178,7 @@ export default function Home() {
         <h3 className='text-sm'>The Course</h3>
         <div>
           <div className='flex flex-row items-baseline'>
-            <h1 className=' text-4xl md:text-9xl text-center'>Online music</h1>
+            <h1 className=' text-5xl md:text-9xl text-center'>Online music</h1>
             <div className='w-4 md:w-12 mr-[-10px] h-4 md:h-12 rounded-full bg-primary'></div>
             <div className='w-4 md:w-12 h-4 md:h-12 rounded-full bg-red-800'></div>
           </div>
@@ -234,7 +234,7 @@ export default function Home() {
         </motion.div>
       </motion.section>
       <motion.section className='flex flex-col justify-center items-center w-full min-h-svh '>
-        <h1 className='text-8xl max-w-3xl py-20 text-center'>
+        <h1 className='text-6xl md:text-8xl max-w-3xl py-20 text-center'>
           Onlline music production courses
         </h1>
         <motion.div
@@ -270,7 +270,7 @@ export default function Home() {
       </motion.section>
       <section className='relative flex flex-col gap-4 w-full min-h-lvh '>
         <div className='w-full space-y-8'>
-          <h1 className='text-7xl font-bold text-center py-20'>
+          <h1 className='text-7xl text-center py-20'>
             Real<cite> results</cite>
           </h1>
         </div>
@@ -356,7 +356,7 @@ export default function Home() {
         </div>
       </section>
       <section className='w-full gap-4 min-h-lvh flex flex-col justify-center items-center pb-20'>
-        <h1 className='text-7xl font-bold text-center py-20'>
+        <h1 className='text-7xl text-center py-20'>
           Book your musical journy <cite>now</cite>
         </h1>
         <motion.div
@@ -402,12 +402,20 @@ export default function Home() {
       </section>
       <section className='w-full gap-4 min-h-lvh  bg-[url("https://placehold.co/600x400?text=Placeholder")] bg-cover bg-center bg-no-repeat'>
         <div className='flex flex-col justify-center items-center bg-radial from-10% from-transparent to-white dark:to-secondary to-80%  text-white'>
-          <h1 className='pt-40 text-6xl text-secondary dark:text-white'>
+          <h1 className='pt-40 text-6xl text-secondary text-center dark:text-white'>
             Got a Question?
           </h1>
           <div className='py-20'>
             <FAQSection />
           </div>
+        </div>
+      </section>
+      <section className="w-full">
+        <div className="w-full border-2 border-primary rounded-lg mx-8 py-12 flex flex-col sm:flex-row items-center justify-around space-y-12">
+          <p className="text-2xl">Get in touch with us!</p>
+          <Link href={"/contact"}>
+            <RotatingGradientButton>Contact</RotatingGradientButton>
+          </Link>
         </div>
       </section>
     </>

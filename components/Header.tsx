@@ -6,7 +6,7 @@ export default async function Header() {
   const session = await auth();
   return (
     <header className='w-full'>
-      <div className='flex items-center justify-between max-w-[1600px] p-4 bg-white dark:bg-secondary dark:text-white fixed top-0 z-10 mx-auto left-0 right-0'>
+      <div className='flex items-center justify-between w-dvw max-w-[1600px] p-4 bg-white dark:bg-secondary dark:text-white fixed top-0 z-10 mx-auto left-0 right-0'>
         <div className='flex items-center w-1/2'>
           <Link href={"/"}>
             <Logo className='w-40 cursor-pointer' />
@@ -28,7 +28,10 @@ export default async function Header() {
                 <form
                   action={async () => {
                     "use server";
-                    await signIn("asgardeo", { prompt: "login" });
+                    await signIn("asgardeo", {
+                      prompt: "login",
+                      redirectTo: "/dashboard",
+                    });
                   }}
                 >
                   <button className='cursor-pointer' type='submit'>
@@ -39,7 +42,7 @@ export default async function Header() {
                 <form
                   action={async () => {
                     "use server";
-                    await signOut();
+                    await signOut({ redirect: true, redirectTo: "/" });
                   }}
                 >
                   <button type='submit'>Logout</button>
