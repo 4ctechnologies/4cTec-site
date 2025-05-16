@@ -10,7 +10,7 @@ export default function DashboardLayout({
   children: React.ReactNode;
 }) {
   return (
-    <div className="relative flex flex-col min-h-screen w-full bg-primary/15 text-secondary dark:bg-secondary dark:text-white">
+    <div className='relative flex flex-col min-h-screen w-full bg-primary/15 text-secondary dark:bg-secondary dark:text-white'>
       {/* Sidebar */}
       <DashboardSidebar />
 
@@ -21,9 +21,9 @@ export default function DashboardLayout({
         }`}
       >
         <DashboardHeader />
-        <section className="p-4 md-p6">
-        </section>
+        <section className='p-4 md-p6'>{children}</section>
       </div>
+      <Toaster />
     </div>
   );
 }

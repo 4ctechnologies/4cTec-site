@@ -18,6 +18,9 @@ export const { handlers, signIn, signOut, auth } = NextAuth({
   providers: [Asgardeo({
     issuer: process.env.AUTH_ASGARDEO_ISSUER
   })],
+  session:{
+    strategy:"jwt"
+  },
   callbacks: {
     async jwt({ token, profile }) {
       if (profile) {
@@ -48,11 +51,11 @@ export const { handlers, signIn, signOut, auth } = NextAuth({
       // console.log("Session Callback:", { session, token });
       return session;
     },
-    // authorized: async ({request,auth})=>{
-    //   if (!auth){
-    //     return Response.redirect(new URL("/",request.nextUrl))
-    //   }
-    //   return !auth
-    // }
+    authorized: async ({request,auth})=>{
+      if (!auth){
+        return Response.redirect(new URL("/",request.nextUrl))
+      }
+      return !auth
+    }
   }
 })
