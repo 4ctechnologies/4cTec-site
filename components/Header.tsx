@@ -1,6 +1,7 @@
 import Link from "next/link";
 import { auth, signIn, signOut } from "@/auth";
 import Logo from "./logo";
+import MobileMenu from "./MobileMenu";
 
 export default async function Header() {
   const session = await auth();
@@ -12,7 +13,36 @@ export default async function Header() {
             <Logo className='w-40 cursor-pointer' />
           </Link>
         </div>
-        <nav className='w-1/2'>
+        {/* Mobile menu */}
+        <MobileMenu className='md:hidden'>
+          <div className='cursor-pointer bg-theme-white text-black rounded-xl px-5 py-3 hover:bg-primary hover:text-white transition duration-300 ease-in-out'>
+            {!session ? (
+              <form
+                action={async () => {
+                  "use server";
+                  await signIn("asgardeo", {
+                    prompt: "login",
+                    redirectTo: "/dashboard",
+                  });
+                }}
+              >
+                <button className='cursor-pointer' type='submit'>
+                  Login
+                </button>
+              </form>
+            ) : (
+              <form
+                action={async () => {
+                  "use server";
+                  await signOut({ redirect: true, redirectTo: "/" });
+                }}
+              >
+                <button type='submit'>Logout</button>
+              </form>
+            )}
+          </div>
+        </MobileMenu>
+        <nav className='w-1/2 hidden md:block'>
           <ul className='flex justify-around items-center'>
             <li className='cursor-pointer hover:text-primary transition duration-300 ease-in-out py-3 px-5 border-2 border-white hover:border-primary dark:border-secondary rounded-xl'>
               <Link href='/'>About</Link>
@@ -35,7 +65,7 @@ export default async function Header() {
                   }}
                 >
                   <button className='cursor-pointer' type='submit'>
-                    IoT Dashbaord
+                    Login
                   </button>
                 </form>
               ) : (
