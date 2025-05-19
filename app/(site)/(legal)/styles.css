@@ -1,0 +1,35 @@
+.page h1 {
+    font-size: var(--text-4xl);
+}
+
+.page h2 {
+    font-size: var(--text-3xl);
+}
+
+.page h3 {
+    font-size: var(--text-2xl);
+}
+
+.page h4 {
+    font-size: var(--text-xl);
+}
+
+
+
+.page p {
+    font-size: var(--text-sm);
+    text-align: justify;
+    font-style: oblique;
+}
+
+.page strong {
+    font-size: var(--text-base);
+    color: var(--color-secondary);
+}
+
+
+
+.page a:hover {
+    color: var(--color-primary);
+    text-decoration: underline;
+}

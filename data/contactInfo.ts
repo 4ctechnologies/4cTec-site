@@ -1,8 +1,8 @@
 
 export const contactInfo = {
     email: "support@4ctechnologies.net",
-    phone: "+1 (123) 456-7890",
-    address: "1234 Main St, Anytown, USA",
+    phone: "+1 (843) 694 9951",
+    address: "183 Wooster St, New York, NY 10012, United States",
 }
 
 export const socialLinks = [

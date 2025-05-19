@@ -45,7 +45,7 @@ export default async function Header() {
         <nav className='w-1/2 hidden md:block'>
           <ul className='flex justify-around items-center'>
             <li className='cursor-pointer hover:text-primary transition duration-300 ease-in-out py-3 px-5 border-2 border-white hover:border-primary dark:border-secondary rounded-xl'>
-              <Link href='/'>About</Link>
+              <Link href='/#about'>About</Link>
             </li>
             <li className='cursor-pointer hover:text-primary transition duration-300 ease-in-out py-3 px-5 border-2 border-white hover:border-primary dark:border-secondary rounded-xl'>
               <Link href='/blogs/1'>Blogs</Link>

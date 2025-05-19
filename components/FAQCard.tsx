@@ -2,6 +2,7 @@
 import { useEffect, useState } from "react";
 import { Add, Remove } from "@mui/icons-material";
 import { motion } from "framer-motion";
+import { useTheme } from "@/context/ThemeContext";
 
 export const FAQCard = ({
   question,
@@ -15,6 +16,7 @@ export const FAQCard = ({
   onClick: () => void;
 }) => {
   const [expanded, setExpanded] = useState(false);
+  const { isDark } = useTheme();
   useEffect(() => {
     if (isSelected) {
       setExpanded(true);
@@ -38,10 +40,16 @@ export const FAQCard = ({
         }`}
         onClick={onClick}
       >
-        <h2 className='text-xl text-secondary dark:text-white font-bold mb-4'>{question}</h2>
-        <span>{expanded ? <Remove /> : <Add />}</span>
+        <h2 className='text-xl text-white font-bold mb-4'>{question}</h2>
+        <span>
+          {expanded ? (
+            <Remove htmlColor={isDark ? "#fff" : "#020618"} />
+          ) : (
+            <Add htmlColor={isDark ? "#fff" : "#020618"} />
+          )}
+        </span>
       </div>
-      {expanded && <p className='text-secondary dark:text-white mb-4 w-11/12'>{answer}</p>}
+      {expanded && <p className='text-white mb-4 w-11/12'>{answer}</p>}
     </motion.div>
   );
 };

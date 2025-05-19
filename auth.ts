@@ -51,11 +51,23 @@ export const { handlers, signIn, signOut, auth } = NextAuth({
       // console.log("Session Callback:", { session, token });
       return session;
     },
-    authorized: async ({request,auth})=>{
-      if (!auth){
-        return Response.redirect(new URL("/",request.nextUrl))
+    authorized: async({ request, auth })=> {
+      console.log("Authorized Callback - Auth:", auth);
+  
+      if (!auth) {
+        console.log("User is not authenticated, redirecting to home.");
+        return false; // Deny access
       }
-      return !auth
+  
+      console.log("User is authenticated, allowing access.");
+      return true; // Allow access
     }
+    // authorized: async ({request,auth})=>{
+    //   if (!auth){
+    //     return Response.redirect(new URL("/",request.nextUrl))
+    //   }
+    //   return !auth
+    // }
+
   }
 })

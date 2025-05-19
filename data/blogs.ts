@@ -1,7 +1,7 @@
 
 export const blogs = [
     {
-        image: "/images/blog1.png",
+        image: "/blogs/1.png",
         title: "Blog Post 1",
         description: "This is a description of blog post 1.",
         date: "2023-10-01",
@@ -9,7 +9,7 @@ export const blogs = [
         id: "1",
     },
     {
-        image: "/images/blog2.png",
+        image: "/blogs/2.png",
         title: "Blog Post 2",
         description: "This is a description of blog post 2.",
         date: "2023-10-02",
@@ -17,7 +17,7 @@ export const blogs = [
         id: "2",
     },
     {
-        image: "/images/blog3.png",
+        image: "/blogs/3.png",
         title: "Blog Post 3",
         description: "This is a description of blog post 3.",
         date: "2023-10-03",
@@ -25,7 +25,7 @@ export const blogs = [
         id: "3",
     },
     {
-        image: "/images/blog4.png",
+        image: "/blogs/4.png",
         title: "Blog Post 4",
         description: "This is a description of blog post 4.",
         date: "2023-10-04",

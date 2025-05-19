@@ -2,6 +2,7 @@
 import { motion } from "framer-motion";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
+import "./styles.css";
 
 export default function LegalLayout({
   children,
@@ -35,7 +36,9 @@ export default function LegalLayout({
 
   return (
     <section className='grid grid-cols-4 gap-4 pt-40'>
-      <article className='col-span-3 flex flex-col gap-4'>{children}</article>
+      <article className='col-span-3 flex flex-col gap-4 mx-8 p-12 border-4 border-primary rounded-lg bg-linear-to-b from-0% from-primary page'>
+        {children}
+      </article>
       <div>
         <h2 className='text-4xl border-b-2 border-primary'>Quick links</h2>
         <motion.ul
@@ -77,6 +80,18 @@ export default function LegalLayout({
             }`}
           >
             <Link href='/terms'>Terms of Service</Link>
+          </motion.li>
+          <motion.li
+            variants={childVarients}
+            transition={{
+              duration: 0.5,
+              ease: "easeInOut",
+            }}
+            className={`hover:text-primary py-2 hover:bg-primary/15 px-4 rounded-lg ${
+              page === "cookies" ? "bg-primary/15 text-primary" : ""
+            }`}
+          >
+            <Link href='/cookies'>Cookies Policy</Link>
           </motion.li>
           <motion.li
             variants={childVarients}

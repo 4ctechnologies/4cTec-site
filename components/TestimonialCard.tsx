@@ -12,7 +12,7 @@ export default function TestimonialCard(props: testimonialCards) {
         alt='Testimonial'
         width={100}
         height={100}
-        className='rounded-full mb-4 w-10 h-10 object-cover'
+        className='rounded-full mb-4 w-30 h-30 object-cover'
       ></Image>
       <p className='font-semibold text-sm'>
         &quot;

@@ -132,7 +132,10 @@ export default function Home() {
           transition={{ duration: 0.2 }}
         ></motion.div>
       </section>
-      <section className='grid grid-cols-1 md:grid-cols-2 w-full min-h-lvh space-y-4 mt-20 sm:mt-0'>
+      <section
+        id='about'
+        className='grid grid-cols-1 md:grid-cols-2 w-full min-h-lvh space-y-4 mt-20 sm:mt-0'
+      >
         <motion.div
           className='w-full self-center flex flex-col space-y-8'
           whileInView={{ opacity: 1, y: 0 }}
@@ -285,7 +288,7 @@ export default function Home() {
           )}
 
           <motion.div
-            className='grid grid-cols-2 md:grid-cols-4 gap-4 sm:grid-rows-8 '
+            className='grid grid-cols-2 md:grid-cols-4 gap-4 sm:grid-rows-8 px-4'
             variants={parentVariantsTestoimomials}
             initial='hidden'
             whileInView='visible'
@@ -360,7 +363,7 @@ export default function Home() {
           Book your musical journy <cite>now</cite>
         </h1>
         <motion.div
-          className='grid grid-cols-1 md:grid-cols-3 gap-4 space-y-8 w-full align-center justify-items-center'
+          className='grid grid-cols-1 md:grid-cols-3 gap-4 space-y-20 w-full align-center justify-items-center'
           variants={blogParentVarient}
           initial='hidden'
           animate='visible'
@@ -400,8 +403,8 @@ export default function Home() {
           <MoreButton buttonClick={() => setShowAllBlogs(true)} />
         )}
       </section>
-      <section className='w-full gap-4 min-h-lvh  bg-[url("https://placehold.co/600x400?text=Placeholder")] bg-cover bg-center bg-no-repeat'>
-        <div className='flex flex-col justify-center items-center bg-radial from-10% from-transparent to-white dark:to-secondary to-80%  text-white'>
+      <section className='w-full gap-4 min-h-lvh  bg-[url("/faq.png")] bg-cover bg-center bg-no-repeat'>
+        <div className='flex flex-col justify-center items-center bg-radial from-10% from-secondary/50 to-white dark:to-secondary to-80%  text-white'>
           <h1 className='pt-40 text-6xl text-secondary text-center dark:text-white'>
             Got a Question?
           </h1>
@@ -410,9 +413,9 @@ export default function Home() {
           </div>
         </div>
       </section>
-      <section className="w-full">
-        <div className="w-full border-2 border-primary rounded-lg mx-8 py-12 flex flex-col sm:flex-row items-center justify-around space-y-12">
-          <p className="text-2xl">Get in touch with us!</p>
+      <section className='flex flex-col justify-center items-center w-full mt-12 px-8 max-w-svw'>
+        <div className='w-full border-2 border-primary rounded-lg py-20 flex flex-col sm:flex-row items-center justify-around space-y-12 sm:space-y-0'>
+          <p className='text-2xl '>Get in touch with us!</p>
           <Link href={"/contact"}>
             <RotatingGradientButton>Contact</RotatingGradientButton>
           </Link>

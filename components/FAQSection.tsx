@@ -32,7 +32,7 @@ export const FAQSection = () => {
             variants={childVarientsColumn}
             transition={{ duration: 0.5, ease: "easeInOut" }}
             key={index}
-            className='border-b py-2 first-of-type:border-t border-gray-600'
+            className='border-b py-2 first-of-type:border-t border-white'
           >
             <FAQCard
               question={faq.question}

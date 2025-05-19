@@ -65,7 +65,7 @@ const RotatingGradientButton: React.FC<RotatingGradientButtonProps> = ({
 
   return (
     <motion.button
-      className={`px-8 py-4 rounded-xl text-white font-bold text-lg overflow-hidden relative focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500 shadow-md hover:shadow-lg transition-shadow duration-300 ease-in-out ${className}`}
+      className={`px-8 py-4 rounded-xl cursor-pointer text-white font-bold text-lg overflow-hidden relative focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500 shadow-md hover:shadow-lg transition-shadow duration-300 ease-in-out ${className}`}
       onClick={onClick}
       animate={animatedProperties} // Apply the continuous animation properties
       transition={animationTransition} // Specify the transition for the continuous animation
