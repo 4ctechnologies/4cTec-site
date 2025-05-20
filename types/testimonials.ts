@@ -1,5 +1,6 @@
 export interface testimonialCards {
-    image: string;
-    description: string;
-    name: string;
-  }
+  image: string;
+  description: string;
+  name: string;
+  position?: string;
+}

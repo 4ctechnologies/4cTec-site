@@ -104,20 +104,20 @@ export default function Home() {
             transition={{ duration: 0.2 }}
           >
             <h1 className='text-6xl font-bold text-center md:text-left'>
-              Online music production courses
+              Smarter Living Starts With Safer Spaces
             </h1>
             <p className='text-center md:text-left'>
-              Lorem ipsum dolor, sit amet consectetur adipisicing elit. Maiores
-              voluptas omnis harum eos.
+              Smart security and automation for better control, and connected
+              anytime, anywhere.
             </p>
           </motion.div>
           <div className='flex space-x-4 justify-center md:justify-start '>
-            <Link href={"/register"}>
+            <Link href={"/dashboard"}>
               <button className='bg-primary text-nowrap text-white px-4 py-2 rounded-lg hover:bg-white hover:text-primary border-primary border dark:hover:bg-secondary transition duration-300 ease-in-out cursor-pointer'>
-                Get Started
+                Start here
               </button>
             </Link>
-            <Link href={"/about"}>
+            <Link href={"/#about"}>
               <button className='bg-white text-nowrap text-secondary px-4 py-2 rounded-lg hover:border-primary hover:text-primary border dark:bg-secondary dark:border-secondary dark:text-white border-white transition duration-300 ease-in-out cursor-pointer'>
                 Learn More
               </button>
@@ -134,7 +134,7 @@ export default function Home() {
       </section>
       <section
         id='about'
-        className='grid grid-cols-1 md:grid-cols-2 w-full min-h-lvh space-y-4 mt-20 sm:mt-0'
+        className='grid grid-cols-1 lg:grid-cols-2 w-full min-h-lvh space-y-4 mt-20 lg:mt-0'
       >
         <motion.div
           className='w-full self-center flex flex-col space-y-8'
@@ -142,35 +142,35 @@ export default function Home() {
           initial={{ opacity: 0, y: 100 }}
           transition={{ duration: 0.5 }}
         >
-          <div className='text-7xl leading-20 w-full flex flex-col md:pr-20'>
-            <div className=' pl-4 md:pl-48'>
-              <h1>Online Music</h1>
+          <div className='text-4xl sm:text-5xl md:text-6xl lg:text-7xl leading-20 w-full flex flex-col md:pr-20'>
+            <div className=' pl-4 md:pl-20'>
+              <h1>SmartSecurity</h1>
             </div>
-            <span className=' pl-4 md:pl-48 bg-primary text-white dark:text-secondary'>
-              production
+            <span className=' pl-4 md:pl-20 bg-primary text-white dark:text-secondary'>
+              AI Intelligence
             </span>
-            <div className=' pl-4 md:pl-48'>
-              <h1>Courses</h1>
+            <div className=' pl-4 md:pl-20'>
+              <h1>ConnectedLiving</h1>
             </div>
           </div>
-          <p className=' pl-4 md:pl-48 max-w-xl text-center md:text-left'>
-            Lorem ipsum dolor, sit amet consectetur adipisicing elit. Maiores
-            voluptas omnis harum eos. Maiores voluptas omnis harum eos.
+          <p className=' pl-4 md:pl-20 max-w-xl text-center md:text-left'>
+            Keep your home or business safe and smart with our AI-powered hub
+            watch, control, and protect everything in real time!
           </p>
-          <div className=' pl-4 md:pl-48 flex justify-center gap-4 md:justify-start'>
-            <Link href={"/about"}>
+          <div className=' pl-4 md:pl-20 flex justify-center gap-4 md:justify-start'>
+            <Link href={"/contact"}>
               <button className='bg-white text-secondary border-white px-4 py-2 rounded-lg  hover:border-secondary dark:bg-secondary dark:text-white dark:border-secondary dark:hover:text-white dark:hover:border-white border transition duration-300 ease-in-out cursor-pointer'>
-                Learn More
+                Explore More
               </button>
             </Link>
-            <Link href={"/register"}>
+            <Link href={"/dashboard"}>
               <button className=' text-white bg-secondary border-secondary hover:bg-white hover:text-secondary px-4 py-2 rounded-lg   border dark:bg-white dark:text-secondary dark:border-white dark:hover:bg-secondary dark:hover:text-white  transition duration-300 ease-in-out cursor-pointer'>
-                Get Started
+                Begin Now
               </button>
             </Link>
           </div>
         </motion.div>
-        <div className="bg-[url('/aboutus.png')] bg-cover bg-center bg-no-repeat  w-full h-[50vh] sm:h-full text-white"></div>
+        <div className="bg-[url('/aboutus.png')] bg-cover bg-center bg-no-repeat  w-full h-[50vh]  lg:h-full text-white"></div>
       </section>
       <motion.section
         className='py-20 sm:py-48 flex flex-col gap-4 w-full min-h-lvh  justify-center items-center bg-white text-secondary dark:bg-secondary dark:text-white'
@@ -178,7 +178,7 @@ export default function Home() {
         initial={{ opacity: 0, y: 100 }}
         transition={{ duration: 0.5 }}
       >
-        <h3 className='text-sm'>The Course</h3>
+        <h3 className='text-sm'>Features</h3>
         <div>
           <div className='flex flex-row items-baseline'>
             <h1 className=' text-5xl md:text-9xl text-center'>Online music</h1>
@@ -213,32 +213,36 @@ export default function Home() {
               width={75}
               height={75}
             />
-            <h1 className=' text-4xl md:text-9xl text-center'>courses</h1>
+            {/* <h1 className=' text-4xl md:text-9xl text-center'>courses</h1> */}
           </div>
         </div>
         <p className='text-center max-w-xl py-10'>
-          Lorem ipsum dolor sit amet consectetur adipisicing elit. Quibusdam
-          officia perferendis sequi natus dolorum inventore excepturi
+          An innovative system that blends centralized smart home control with
+          intelligent surveillance. With the help of machine learning, it
+          provides device automation, automated threat detection, real-time
+          monitoring, and actionable information from one user-friendly
+          interface. Ideal for improving ease of use, efficiency, and security
+          in households or businesses.
         </p>
-        {/* <Link
+        <Link
           className='dark:bg-primary dark:text-secondary border dark:border-primary dark:hover:bg-secondary dark:hover:text-primary hover:bg-primary hover:text-white hover:border-primary px-4 py-2 rounded-lg'
-          href={"/about"}
+          href={"/contact"}
         >
           Learn more
-        </Link> */}
+        </Link>
         <motion.div
           initial={{ opacity: 0, y: 100 }}
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.5 }}
           className='relative w-full flex flex-col justify-center items-center space-y-12 pt-20'
         >
-          <h3 className='text-4xl'>Features</h3>
+          {/* <h3 className='text-4xl'>Features</h3> */}
           <FeatureSection />
         </motion.div>
       </motion.section>
       <motion.section className='flex flex-col justify-center items-center w-full min-h-svh '>
         <h1 className='text-6xl md:text-8xl max-w-3xl py-20 text-center'>
-          Onlline music production courses
+          4C Technologies pricing
         </h1>
         <motion.div
           variants={parentVariants}
@@ -261,6 +265,7 @@ export default function Home() {
             >
               <PricingCard
                 title={plan.title}
+                plan_type={plan.plan_type}
                 description={plan.description}
                 price={plan.price?.toString()}
                 features={plan.features}
@@ -288,7 +293,7 @@ export default function Home() {
           )}
 
           <motion.div
-            className='grid grid-cols-2 md:grid-cols-4 gap-4 sm:grid-rows-8 px-4'
+            className='grid grid-cols-2 md:grid-cols-4 gap-4 sm:grid-rows-8 grid-auto-min px-4'
             variants={parentVariantsTestoimomials}
             initial='hidden'
             whileInView='visible'

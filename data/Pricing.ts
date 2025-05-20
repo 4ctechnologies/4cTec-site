@@ -1,42 +1,51 @@
-
 export const Plans = [
-    {
-        title: "Basic",
-        price: 0,
-        features: [
-            "Feature 1",
-            "Feature 2",
-            "Feature 3",
-            "Feature 4",
-        ],
-        description: "lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
-        buttonText: "Get Started",
-        link: "/signup",
-    },
-    {
-        title: "Pro",
-        price: 19.99,
-        features: [
-            "Feature 1",
-            "Feature 2",
-            "Feature 3",
-            "Feature 4",
-        ],
-        description: "lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
-        buttonText: "Get Started",
-        link: "/signup",        
-    },
-    {
-        title: "Enterprise",
-        features: [
-            "Feature 1",
-            "Feature 2",
-            "Feature 3",
-            "Feature 4",
-        ],        description: "lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
-
-        buttonText: "Plese Contact Us",
-        link: "/contact",},
+  {
+    title: "Smart Start",
+    plan_type: "Basic Plan",
+    price: "19/month",
+    features: [
+      "1 AI camera integration",
+      "Motion detection & alerts",
+      "Mobile app access",
+      "Cloud storage (7 days)",
+      "Voice assistant support (Alexa/Google)",
+    ],
+    description: "Perfect for individuals or small homes.",
+    link: "/dashboard",
+    buttonText: "Get Started",
+  },
+  {
+    title: "Home Guardian",
+    plan_type: "Pro Plan",
+    price: "49/month",
+    features: [
+      "Up to 4 AI camera integrations",
+      "Advanced object/person detection",
+      "24/7 live streaming",
+      "Cloud storage (30 days)",
+      "Smart Hub control (lights, doors, sensors)",
+      "Emergency alert system",
+      "Multi-user support",
+    ],
+    description: "Ideal for families or smart homes",
+    link: "/dashboard",
+    buttonText: "Get Started",
+  },
+  {
+    title: "Ultra Secure",
+    plan_type: "Enterprise Plan",
+    price: "149/month",
+    features: [
+      "Up to 20 AI camera integrations",
+      "Real-time analytics dashboard",
+      "Facial recognition & license plate detection",
+      "AI threat prediction & automated actions",
+      "Smart Hub automation for all connected devices",
+      "Unlimited cloud storage",
+      "Priority support + On-site assistance",
+    ],
+    description: "Designed for offices, buildings, and enterprises.",
+    link: "/dashboard",
+    buttonText: "Get Started",
+  },
 ];
-
- 

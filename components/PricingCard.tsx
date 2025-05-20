@@ -19,10 +19,15 @@ const PricingCard = (props: pricingCard) => {
       transition={{ duration: 0.2 }}
       className='bg-transparent  p-6 flex flex-col items-center max-w-[350px] mx-auto'
     >
-      <h2 className='text-xl font-bold mb-4'>{props.title}</h2>
-      <p className='text-gray-600 mb-4 p-4 text-justify'>{props.description}</p>
+      <h2 className='text-xl font-bold text-wrap text-center mx-auto w-1/3'>
+        {props.title}
+      </h2>
+      <h4 className='text-sm px-2 py-1 rounded-lg bg-primary mb-4'>
+        {props.plan_type}
+      </h4>
+      <p className='mb-4 p-4 text-center'>{props.description}</p>
       {props.price && (
-        <p className='text-4xl font-semibold mb-4'>${props.price}</p>
+        <p className='text-3xl font-semibold mb-4'>${props.price}</p>
       )}
       {!expanded && (
         <motion.div
@@ -65,16 +70,14 @@ const PricingCard = (props: pricingCard) => {
             ))}
           </ul>
           <Link href={props.link}>
-            {props.price ? "Try for free" : "Get Started"}
+            <motion.button
+              className='mt-4 w-full h-10 bg-primary cursor-pointer text-white rounded-lg'
+              whileHover={{ scale: 1.05 }}
+              whileTap={{ scale: 0.95 }}
+            >
+              {props.price ? "Try for free" : "Get Started"}
+            </motion.button>
           </Link>
-          <motion.button
-            className='mt-4 w-full h-10 bg-primary text-white rounded-lg'
-            onClick={handleExpand}
-            whileHover={{ scale: 1.05 }}
-            whileTap={{ scale: 0.95 }}
-          >
-            Collapse
-          </motion.button>
         </motion.div>
       )}
     </motion.div>

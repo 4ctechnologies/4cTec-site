@@ -1,155 +1,61 @@
 "use client";
 import Link from "next/link";
 import { useState } from "react";
+import { socialLinks, citations } from "@/data/contactInfo";
 
 export default function Footer() {
   const [cookieButton, setCookieButton] = useState(true);
   return (
     <footer className='flex pt-20 flex-col items-center justify-between max-w-7xl mx-auto p-4 bg-white dark:bg-secondary dark:text-white shadow-md'>
       <div className='grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 w-full p-4'>
-        <div id='socials'>
+        <div id='socials' className='flex flex-col space-y-4'>
           <ul className='flex items-center justify-center space-x-4'>
-            <li className='fill-none hover:fill-primary stroke-primary transition duration-300 ease-in-out w-12 h-12'>
-              <a
-                href='https://www.linkedin.com/4CTechnologies/'
-                target='_blank'
-                rel='noopener noreferrer'
+            {socialLinks.map((link, index) => (
+              <li
+                key={index}
+                className='fill-none hover:fill-primary stroke-primary transition duration-300 ease-in-out w-12 h-12'
               >
-                <svg
-                  xmlns='http://www.w3.org/2000/svg'
-                  viewBox='0 0 50 50'
-                  width='full'
-                  height='full'
-                >
-                  <path
-                    style={{
-                      strokeWidth: "1",
-                      strokeLinecap: "round",
-                      strokeLinejoin: "round",
-                      strokeMiterlimit: "10",
-                    }}
-                    d='M9,45h32c2.209,0,4-1.791,4-4V9c0-2.209-1.791-4-4-4H9C6.791,5,5,6.791,5,9v32C5,43.209,6.791,45,9,45z'
-                  />
-                  <polygon
-                    style={{
-                      strokeWidth: "1",
-                      strokeLinecap: "round",
-                      strokeLinejoin: "round",
-                      strokeMiterlimit: "10",
-                    }}
-                    className='fill-white dark:fill-secondary'
-                    points='11,20 17,20 17,33.135 17,39 11,39 '
-                  />
-                  <path
-                    style={{
-                      strokeWidth: "1",
-                      strokeLinecap: "round",
-                      strokeLinejoin: "round",
-                      strokeMiterlimit: "10",
-                    }}
-                    className='fill-white dark:fill-secondary'
-                    d='M14,17L14,17c-1.8,0-3-1.133-3-2.533S12.2,12,14,12s2.925,1.067,3,2.467C17,15.867,15.875,17,14,17z'
-                  />
-                  <path
-                    style={{
-                      strokeWidth: "1",
-                      strokeLinecap: "round",
-                      strokeLinejoin: "round",
-                      strokeMiterlimit: "10",
-                    }}
-                    className='fill-white dark:fill-secondary'
-                    d='M39,39h-6c0,0,0-9.257,0-10c0-2-1-4-3.5-4.043C27.022,24.913,26,27,26,29c0,0.909,0,10,0,10h-6V20h6v2.561c0,0,1.93-2.561,5.813-2.561C35.778,20,39,22.726,39,28.261V39z'
-                  />
-                </svg>
-              </a>
-            </li>
-            <li className='hover:fill-primary fill-white dark:fill-secondary stroke-primary transition duration-300 ease-in-out w-12 h-12'>
-              <a
-                href='https://www.facebook.com/4CTechnologies/'
-                target='_blank'
-                rel='noopener noreferrer'
+                <a href={link.url} target='_blank' rel='noopener noreferrer'>
+                  <svg
+                    xmlns='http://www.w3.org/2000/svg'
+                    viewBox='0 0 50 50'
+                    width='full'
+                    height='full'
+                    dangerouslySetInnerHTML={{ __html: link.icon }}
+                    className='group'
+                  ></svg>
+                </a>
+              </li>
+            ))}
+          </ul>
+          <ul className='flex items-center justify-center space-x-4'>
+            {citations.map((citation, index) => (
+              <li
+                key={index}
+                className='fill-none hover:fill-primary stroke-primary transition duration-300 ease-in-out w-12 h-12'
               >
-                <svg
-                  xmlns='http://www.w3.org/2000/svg'
-                  viewBox='0 0 50 50'
-                  width='full'
-                  height='full'
+                <a
+                  href={citation.url}
+                  target='_blank'
+                  rel='noopener noreferrer'
                 >
-                  <path
-                    style={{
-                      strokeWidth: 1,
-                      strokeLinecap: "round",
-                      strokeMiterlimit: 10,
-                    }}
-                    d='M25,4C13.402,4,4,13.402,4,25c0,10.528,7.756,19.222,17.861,20.74V30.566h-5.196v-5.52h5.196v-3.673c0-6.081,2.963-8.751,8.017-8.751c2.421,0,3.701,0.179,4.307,0.261v4.818h-3.447c-2.145,0-2.895,2.034-2.895,4.327v3.017h6.289l-0.853,5.52h-5.435v15.22C38.093,44.395,46,35.631,46,25C46,13.402,36.598,4,25,4z'
-                  />
-                </svg>
-              </a>
-            </li>
-            <li className='fill-white dark:fill-secondary hover:stroke-white dark:hover:stroke-secondary hover:fill-primary stroke-primary transition duration-300 ease-in-out w-12 h-12'>
-              {/* Instagram */}
-              <a
-                href='https://www.instagram.com/4CTechnologies/'
-                target='_blank'
-                rel='noopener noreferrer'
-              >
-                <svg
-                  className='group'
-                  xmlns='http://www.w3.org/2000/svg'
-                  viewBox='0 0 50 50'
-                  width='full'
-                  height='full'
-                >
-                  <path
-                    style={{ strokeWidth: 1, strokeMiterlimit: 10 }}
-                    d='M16,46h18c6.627,0,12-5.373,12-12V16c0-6.627-5.373-12-12-12H16C9.373,4,4,9.373,4,16v18C4,40.627,9.373,46,16,46z'
-                  />
-                  <circle
-                    style={{ strokeWidth: 1, strokeMiterlimit: 10 }}
-                    cx='25'
-                    cy='25'
-                    r='10'
-                    className='group-hover:fill-white dark:group-hover:fill-secondary'
-                  />
-                  <circle
-                    cx='37'
-                    cy='13'
-                    r='2'
-                    className='group-hover:fill-white dark:group-hover:fill-secondary'
-                  />
-                </svg>
-              </a>
-            </li>
-            <li className=' stroke-primary hover:fill-primary hover:stroke-white dark:hover:stroke-secondary  fill-white dark:fill-secondary transition duration-300 ease-in-out w-12 h-12'>
-              <a
-                href='https://www.youtube.com/@4CTechnologies/'
-                target='_blank'
-                rel='noopener noreferrer'
-              >
-                <svg
-                  xmlns='http://www.w3.org/2000/svg'
-                  viewBox='0 0 50 50'
-                  width='full'
-                  height='full'
-                  className='group'
-                >
-                  <g>
-                    <path
-                      style={{ strokeWidth: "1" }}
-                      d='M24.4,11c7.2,0,13,0.6,15.8,1.1c1.5,0.4,2.7,1.4,2.9,2.7c0.6,3.2,1,6.6,1,10.1c-0.1,4.3-0.6,7.8-1,10.3c-0.3,1.9-2.3,2.5-2.9,2.7c-3.6,0.7-9.6,1.2-15.6,1.2s-12.1-0.4-15.6-1.2c-1.5-0.4-2.7-1.4-2.9-2.7C5.3,32.4,5,28.7,5,25c0-4.6,0.4-8,0.8-10.1c0.3-1.9,2.4-2.5,2.9-2.7C12,11.5,18.1,11,24.4,11z'
-                    />
-                  </g>
-                  <path
-                    style={{ strokeWidth: "1" }}
-                    className='group-hover:fill-white dark:group-hover:fill-secondary'
-                    d='M21,20.4l8,4.6l-8,4.6V20.4z'
-                  />
-                </svg>
-              </a>
-            </li>
+                  <svg
+                    xmlns='http://www.w3.org/2000/svg'
+                    viewBox='0 0 70 70'
+                    width='full'
+                    height='full'
+                    dangerouslySetInnerHTML={{ __html: citation.icon }}
+                    className='group'
+                  ></svg>
+                </a>
+              </li>
+            ))}
           </ul>
         </div>
-        <div id='Copyright & leagal'>
+        <div
+          id='Copyright & leagal'
+          className='flex flex-col items-center justify-center'
+        >
           <ul className='flex flex-col sm:flex-row items-center justify-center list-disc text-nowrap space-x-0 sm:space-x-8 space-y-4 sm:space-y-0'>
             <li className='list-none'>
               <p className='text-sm text-gray-500'>
@@ -174,7 +80,7 @@ export default function Footer() {
           </p>
         </div>
       </div>
-      <div className='w-full px-4 flex  justify-center items-center text-xs font-extralight'>
+      <div className='w-full px-4 flex  justify-center items-center text-xs font-light'>
         {cookieButton && (
           <>
             <p>

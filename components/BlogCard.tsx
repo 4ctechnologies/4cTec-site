@@ -55,6 +55,7 @@ export const BlogCard = (props: blog) => {
             stiffness: 200,
             damping: 20,
             type: "spring",
+            delay: 0.1,
           }}
           // className={`${
           //   isHovered ? "w-full h-4/5" : "w-4/5 h-11/12"
@@ -85,7 +86,7 @@ export const BlogCard = (props: blog) => {
                 transition={{ duration: 0.2 }}
                 className='mt-2 text-white'
               >
-                {props.description}
+                {props.description.substring(3, 63) + "..."}
               </motion.p>
               <motion.div
                 variants={childVarients}
