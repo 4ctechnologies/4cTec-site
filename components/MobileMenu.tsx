@@ -81,18 +81,21 @@ const MobileMenu: React.FC<{
             <ul className='flex flex-col items-center justify-center space-y-8 h-4/5'>
               <motion.li
                 variants={childVarients}
+                onClick={() => setIsCollapsed(true)}
                 className='cursor-pointer hover:text-primary transition duration-300 ease-in-out py-3 px-5 border-2 border-white hover:border-primary dark:border-secondary rounded-xl'
               >
                 <Link href='/#about'>About</Link>
               </motion.li>
               <motion.li
                 variants={childVarients}
+                onClick={() => setIsCollapsed(true)}
                 className='cursor-pointer hover:text-primary transition duration-300 ease-in-out py-3 px-5 border-2 border-white hover:border-primary dark:border-secondary rounded-xl'
               >
                 <Link href='/blogs/1'>Blogs</Link>
               </motion.li>
               <motion.li
                 variants={childVarients}
+                onClick={() => setIsCollapsed(true)}
                 className='cursor-pointer hover:text-primary transition duration-300 ease-in-out py-3 px-5 border-2 border-white hover:border-primary dark:border-secondary rounded-xl'
               >
                 <Link href='/contact'>Contact</Link>
@@ -100,6 +103,7 @@ const MobileMenu: React.FC<{
             </ul>
             <motion.div
               variants={childVarients}
+              onClick={() => setIsCollapsed(true)}
               className='flex flex-col max-w-80 space-y-8 py-4'
             >
               {children}

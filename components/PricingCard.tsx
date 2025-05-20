@@ -17,7 +17,7 @@ const PricingCard = (props: pricingCard) => {
     <motion.div
       layout
       transition={{ duration: 0.2 }}
-      className='bg-transparent  p-6 flex flex-col items-center max-w-[350px] mx-auto'
+      className='bg-transparent  p-6 flex flex-col items-center max-w-[350px] border min-h-[350px] border-primary rounded-lg mx-auto'
     >
       <h2 className='text-xl font-bold text-wrap text-center mx-auto w-1/3'>
         {props.title}

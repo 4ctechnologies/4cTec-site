@@ -13,15 +13,15 @@ export default async function BlogPage({
     <>
       <section className='flex flex-col min-h-[1750px] mt-20 pb-20'>
         <div className='flex flex-col items-center justify-center w-full '>
-          <div className='relative w-full h-dvh'>
+          <div className='relative w-full min-h-dvh'>
             <Image
               src={blog?.image || "/placeholder.png"}
               alt={blog?.title || "Blog Image"}
-              width={500}
-              height={300}
-              className='w-full h-full object-cover'
+              width={937}
+              height={1250}
+              className='w-full h-auto object-cover'
             />
-            <div className='absolute max-h-[1250px] top-1/2 left-1/2 -translate-x-1/2 flex flex-col items-center justify-center space-y-4 w-11/12 md:w-10/12 lg:w-9/12 p-4 py-20 dark:border-primary dark:border rounded-lg shadow-lg backdrop-blur-xl bg-white/40 dark:bg-secondary/40 overflow-y-auto scroll'>
+            <div className='absolute max-h-[1250px] top-1/2 left-1/2 -translate-x-1/2 flex flex-col items-center justify-start space-y-4 w-11/12 md:w-10/12 lg:w-9/12 p-4 py-20 dark:border-primary dark:border rounded-lg shadow-lg backdrop-blur-xl bg-white/40 dark:bg-secondary/40 overflow-y-auto scroll'>
               <h1 className=' text-3xl font-bold text-center'>{blog?.title}</h1>
               <h3 className='text-xs font-bold self-end p-1 mt-4 bg-primary rounded-lg shadow text-white'>
                 {blog?.date}

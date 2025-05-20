@@ -179,41 +179,49 @@ export default function Home() {
         transition={{ duration: 0.5 }}
       >
         <h3 className='text-sm'>Features</h3>
-        <div>
+        <div className='flex flex-col gap-4 items-center'>
           <div className='flex flex-row items-baseline'>
-            <h1 className=' text-5xl md:text-9xl text-center'>Online music</h1>
+            <h1 className=' text-5xl md:text-9xl text-center'>Smart Living</h1>
             <div className='w-4 md:w-12 mr-[-10px] h-4 md:h-12 rounded-full bg-primary'></div>
             <div className='w-4 md:w-12 h-4 md:h-12 rounded-full bg-red-800'></div>
           </div>
-          <div className='flex flex-row items-center'>
-            <h1 className=' text-4xl md:text-9xl text-center'>production</h1>
+          <div className='flex flex-row items-center justify-stretch'>
+            <h1 className=' text-4xl md:text-9xl text-center'>Made</h1>
             <Image
-              src={"https://placehold.co/600x400?text=Placeholder"}
-              alt='Placeholder Image'
-              width={75}
-              height={75}
+              src={"/Feature title 1.png"}
+              alt='Feature Image'
+              width={500}
+              height={500}
+              className='h-30 w-30 -mr-3 scale-110'
+              style={{ clipPath: "circle(40.0% at 58% 48%)" }}
             />
             <Image
-              src={"https://placehold.co/600x400?text=Placeholder"}
-              alt='Placeholder Image'
-              width={75}
-              height={75}
+              src={"/Feature title 2.png"}
+              alt='Feature Image'
+              width={500}
+              height={500}
+              className='h-30 w-30 mt-3 scale-110'
+              style={{ clipPath: "circle(40.0% at 37% 42%)" }}
             />
           </div>
           <div className='flex flex-row items-center'>
             <Image
-              src={"https://placehold.co/600x400?text=Placeholder"}
-              alt='Placeholder Image'
-              width={75}
-              height={75}
+              src={"/Feature title 3.png"}
+              alt='Feature Image'
+              width={500}
+              height={500}
+              className='h-30 w-30 mt-8 -mr-15 scale-110'
+              style={{ clipPath: "circle(40.0% at 40% 40%)" }}
             />
             <Image
-              src={"https://placehold.co/600x400?text=Placeholder"}
-              alt='Placeholder Image'
-              width={75}
-              height={75}
+              src={"/Feature title 4.png"}
+              alt='Feature Image'
+              width={500}
+              height={500}
+              className='h-30 w-30  scale-110'
+              style={{ clipPath: "circle(40.0% at 56% 51%)" }}
             />
-            {/* <h1 className=' text-4xl md:text-9xl text-center'>courses</h1> */}
+            <h1 className=' text-4xl md:text-9xl text-center'>Easy</h1>
           </div>
         </div>
         <p className='text-center max-w-xl py-10'>
@@ -320,15 +328,15 @@ export default function Home() {
                           ? "row-start-1"
                           : "row-start-2"
                         : index % 2 === 0
-                        ? "row-start-4"
-                        : "row-start-5"
+                          ? "row-start-4"
+                          : "row-start-5"
                       : index === 0 || index === 4
-                      ? "row-start-1"
-                      : index === 1 || index === 5
-                      ? "row-start-2"
-                      : index === 2 || index === 6
-                      ? "row-start-4"
-                      : "row-start-5"
+                        ? "row-start-1"
+                        : index === 1 || index === 5
+                          ? "row-start-2"
+                          : index === 2 || index === 6
+                            ? "row-start-4"
+                            : "row-start-5"
                   }`}
                   variants={
                     screenWidth < 768
@@ -409,7 +417,7 @@ export default function Home() {
         )}
       </section>
       <section className='w-full gap-4 min-h-lvh  bg-[url("/faq.png")] bg-cover bg-center bg-no-repeat'>
-        <div className='flex flex-col justify-center items-center bg-radial from-10% from-secondary/50 to-white dark:to-secondary to-80%  text-white'>
+        <div className='flex flex-col justify-center items-center bg-radial from-20% dark:from-0% from-secondary/50 to-white dark:to-secondary to-95% dark:to-60%  text-white'>
           <h1 className='pt-40 text-6xl text-secondary text-center dark:text-white'>
             Got a Question?
           </h1>

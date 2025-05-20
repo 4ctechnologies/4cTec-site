@@ -1,11 +1,56 @@
+"use client";
+import Notification from "@/components/Notification";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
 import { contactInfo } from "@/data/contactInfo";
+import { useState } from "react";
 
 const ContactPage = () => {
+  const [data, setData] = useState({
+    Name: "",
+    Email: "",
+    Subject: "",
+    Message: "",
+  });
+  const [notification, setNotification] = useState({
+    message: "",
+    status: false,
+  });
+  const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
+    e.preventDefault();
+
+    // Send data to the server
+    const response = await fetch("/api/send", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify(data),
+    });
+
+    if (response.ok) {
+      console.log("Message sent successfully!");
+      // setData({
+      //   Name: "",
+      //   Email: "",
+      //   Subject: "",
+      //   Message: "",
+      // });
+      setNotification({
+        message: "Message sent successfully!",
+        status: true,
+      });
+    } else {
+      console.error("Failed to send message.");
+      setNotification({
+        message: "Failed to send message.",
+        status: true,
+      });
+    }
+  };
   return (
-    <div className='pt-40 px-8 grid grid-cols-1 space-x-10 p-4 md:grid-cols-2'>
+    <div className='pt-40 px-8 grid grid-cols-1 md:space-x-10 space-y-10 md:space-y-0 p-4 md:grid-cols-2'>
       <div className='flex flex-col space-y-20'>
         <div className='flex flex-col space-y-20'>
           <h1 className='text-8xl font-extrabold'>Let&apos;s keep in touch</h1>
@@ -37,7 +82,7 @@ const ContactPage = () => {
           {/* Svg of an arrow from left to right with small head and longe body */}
           <svg
             xmlns='http://www.w3.org/2000/svg'
-            viewBox='0 0 full 24'
+            viewBox='0 0 100 24'
             fill='none'
             stroke='currentColor'
             strokeWidth='2'
@@ -54,40 +99,60 @@ const ContactPage = () => {
             intelligent, safe innovation into your area.
           </p>
         </div>
-        <form action='' className='flex flex-col space-y-4'>
+        <form
+          action=''
+          className='flex flex-col space-y-4'
+          onSubmit={handleSubmit}
+        >
           <h2 className='text-3xl font-bold py-4 '>Contact</h2>
           {/* MaterialUI Input boxes with text on top of them */}
           <div className='flex flex-row space-x-2'>
+            <Notification
+              message={notification.message}
+              status={notification.status}
+            />
             <Input
               type='text'
               placeholder='Name'
               className='border-l-0 border-r-0 border-t-0 border-b-2 rounded-none  w-full focus:border-b ring-primary'
+              value={data.Name}
+              onChange={(e) => setData({ ...data, Name: e.target.value })}
+              required
             />
             <Input
               type='email'
               placeholder='Email'
               className='border-l-0 border-r-0 border-t-0 border-b-2 rounded-none  w-full focus:border-b ring-primary'
+              value={data.Email}
+              onChange={(e) => setData({ ...data, Email: e.target.value })}
+              required
             />
           </div>
           <Input
             type='text'
             placeholder='Subject'
             className='border-l-0 border-r-0 border-t-0 border-b-2 rounded-none  w-full focus:border-b ring-primary'
+            value={data.Subject}
+            onChange={(e) => setData({ ...data, Subject: e.target.value })}
           />
           <Textarea
             placeholder='Message'
-            className='border-l-0 border-r-0 border-t-0 border-b-2 rounded-none  w-full focus:border-b ring-primary'
+            className='border-l-0  border-r-0 border-t-0 border-b-2 rounded-none  w-full focus:border-b ring-primary'
+            value={data.Message}
+            required
+            onChange={(e) => setData({ ...data, Message: e.target.value })}
           />
           <Button
             variant={"default"}
             className='bg-primary text-white rounded-none font-light py-6 w-full'
+            type='submit'
           >
             Send to us
           </Button>
         </form>
       </div>
       <iframe
-        className='w-full col-span-2 aspect-video py-8'
+        className='w-full md:col-span-2 aspect-video py-8'
         src='https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3023.615808593467!2d-74.0020226880216!3d40.726473336609544!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x89c2598e658931ef%3A0xb4ed38729f174f3d!2s183%20Wooster%20St%2C%20New%20York%2C%20NY%2010012%2C%20USA!5e0!3m2!1sen!2slk!4v1747663485122!5m2!1sen!2slk'
         loading='lazy'
       ></iframe>

@@ -1,3 +1,4 @@
+/* eslint-disable @typescript-eslint/no-explicit-any */
 "use client";
 /* eslint-disable @typescript-eslint/no-unused-vars */
 /* eslint-disable no-var */
@@ -5,7 +6,7 @@ import { useEffect } from "react";
 
 const Tawk = () => {
   useEffect(() => {
-    var Tawk_API = Tawk_API || {},
+    var Tawk_API: any = Tawk_API || {},
       Tawk_LoadStart = new Date();
     (function () {
       var s1 = document.createElement("script"),

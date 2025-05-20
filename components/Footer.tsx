@@ -9,7 +9,7 @@ export default function Footer() {
     <footer className='flex pt-20 flex-col items-center justify-between max-w-7xl mx-auto p-4 bg-white dark:bg-secondary dark:text-white shadow-md'>
       <div className='grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 w-full p-4'>
         <div id='socials' className='flex flex-col space-y-4'>
-          <ul className='flex items-center justify-center space-x-4'>
+          <ul className='flex items-center justify-center sm:justify-start space-x-4'>
             {socialLinks.map((link, index) => (
               <li
                 key={index}
@@ -28,7 +28,7 @@ export default function Footer() {
               </li>
             ))}
           </ul>
-          <ul className='flex items-center justify-center space-x-4'>
+          <ul className='flex items-center justify-center sm:justify-start space-x-4'>
             {citations.map((citation, index) => (
               <li
                 key={index}
