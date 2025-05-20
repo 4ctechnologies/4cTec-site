@@ -8,7 +8,7 @@ const Logo = ({ className }: { className?: string }) => {
   return (
     <div className={className}>
       <Image
-        src={isDark ? "/Logo-Dark.png" : "/Logo-Light.png"} // Automatically switch logo based on theme
+        src={isDark ? "/Logo-Dark.webp" : "/Logo-Light.webp"} // Automatically switch logo based on theme
         alt={"4CTechnologies"}
         width={400}
         height={100}

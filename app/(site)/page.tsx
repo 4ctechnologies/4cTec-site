@@ -91,7 +91,7 @@ export default function Home() {
       <section
         className={clsx(
           "mt-4 grid grid-cols-1 md:grid-cols-2 w-full min-h-lvh",
-          isDark ? "bg-[url('/Hero.png')]" : "bg-[url('/Hero-Light.png')]",
+          isDark ? "bg-[url('/Hero.webp')]" : "bg-[url('/Hero-Light.webp')]",
           "bg-cover bg-center bg-no-repeat  text-secondary dark:text-white"
         )}
       >
@@ -111,7 +111,7 @@ export default function Home() {
               anytime, anywhere.
             </p>
           </motion.div>
-          <div className='flex space-x-4 justify-center md:justify-start '>
+          <div className='flex space-x-4 justify-center md:justify-start p-4 '>
             <Link href={"/dashboard"}>
               <button className='bg-primary text-nowrap text-white px-4 py-2 rounded-lg hover:bg-white hover:text-primary border-primary border dark:hover:bg-secondary transition duration-300 ease-in-out cursor-pointer'>
                 Start here
@@ -170,7 +170,7 @@ export default function Home() {
             </Link>
           </div>
         </motion.div>
-        <div className="bg-[url('/aboutus.png')] bg-cover bg-center bg-no-repeat  w-full h-[50vh]  lg:h-full text-white"></div>
+        <div className="bg-[url('/aboutus.webp')] bg-cover bg-center bg-no-repeat  w-full h-[50vh]  lg:h-full text-white"></div>
       </section>
       <motion.section
         className='py-20 sm:py-48 flex flex-col gap-4 w-full min-h-lvh  justify-center items-center bg-white text-secondary dark:bg-secondary dark:text-white'
@@ -188,7 +188,7 @@ export default function Home() {
           <div className='flex flex-row items-center justify-stretch'>
             <h1 className=' text-4xl md:text-9xl text-center'>Made</h1>
             <Image
-              src={"/Feature title 1.png"}
+              src={"/Feature title 1.webp"}
               alt='Feature Image'
               width={500}
               height={500}
@@ -196,7 +196,7 @@ export default function Home() {
               style={{ clipPath: "circle(40.0% at 58% 48%)" }}
             />
             <Image
-              src={"/Feature title 2.png"}
+              src={"/Feature title 2.webp"}
               alt='Feature Image'
               width={500}
               height={500}
@@ -206,7 +206,7 @@ export default function Home() {
           </div>
           <div className='flex flex-row items-center'>
             <Image
-              src={"/Feature title 3.png"}
+              src={"/Feature title 3.webp"}
               alt='Feature Image'
               width={500}
               height={500}
@@ -214,7 +214,7 @@ export default function Home() {
               style={{ clipPath: "circle(40.0% at 40% 40%)" }}
             />
             <Image
-              src={"/Feature title 4.png"}
+              src={"/Feature title 4.webp"}
               alt='Feature Image'
               width={500}
               height={500}
@@ -224,7 +224,7 @@ export default function Home() {
             <h1 className=' text-4xl md:text-9xl text-center'>Easy</h1>
           </div>
         </div>
-        <p className='text-center max-w-xl py-10'>
+        <p className='text-center max-w-2xl py-10'>
           An innovative system that blends centralized smart home control with
           intelligent surveillance. With the help of machine learning, it
           provides device automation, automated threat detection, real-time
@@ -416,7 +416,7 @@ export default function Home() {
           <MoreButton buttonClick={() => setShowAllBlogs(true)} />
         )}
       </section>
-      <section className='w-full gap-4 min-h-lvh  bg-[url("/faq.png")] bg-cover bg-center bg-no-repeat'>
+      <section className='w-full gap-4 min-h-lvh  bg-[url("/faq.webp")] bg-cover bg-center bg-no-repeat'>
         <div className='flex flex-col justify-center items-center bg-radial from-20% dark:from-0% from-secondary/50 to-white dark:to-secondary to-95% dark:to-60%  text-white'>
           <h1 className='pt-40 text-6xl text-secondary text-center dark:text-white'>
             Got a Question?

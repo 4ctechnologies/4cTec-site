@@ -1,6 +1,6 @@
 export const blogs = [
   {
-    image: "/blogs/1.png",
+    image: "/blogs/1.webp",
     title: "Transforming Home Security with AI-Powered IoT Surveillance",
     description:
       "<p>The groundbreaking combination of artificial intelligence (AI) and the Internet of Things (IoT), more intelligent, flexible, and integrated solutions are quickly replacing traditional home security systems in today's digitally connected world. In real time threat detection, predictive analytics, and smooth automation are being introduced into regular homes by AI-powered IoT surveillance systems, which are revolutionizing the security scene. A single smart hub unifies a network of linked devices, including cameras, motion sensors, door locks, and alarms, that are used in these smart surveillance systems. These systems are unique in that they can use machine learning algorithms to process massive volumes of data.</p><p>These systems do more than just record video; they also analyze it, finding odd patterns, spotting illegal access, and differentiating between people, pets, and moving objects. This makes it possible for immediate notifications and automated reactions—like locking doors or calling the police—to occur without the need for human involvement. This technology's versatility is one of its main advantages. As inhabitants' habits and patterns are learned over time, AI models become more accurate and generate fewer false alerts. For example, the algorithm will eventually identify a child's frequent entry into the backyard at 4 PM as regular activity. Additionally, remote control and monitoring are made possible by integration with voice assistants and smartphones, providing homeowners with unparalleled peace of mind from any location in the world.</p><p>Facial recognition and license plate scanning are also included in the real-time capabilities, which are quite helpful in high-security or gated communities. Critical choices are made in real time thanks to faster and more secure data processing made possible by cloud storage and edge computing. AI-based Internet of Things surveillance transforms an ineffective system into a proactive protector, identifying package thieves and warning of an open garage door. Artificial intelligence (AI) in surveillance also aids in regulatory compliance, particularly in commercial settings where safety equipment, attendance, or restricted locations need to be monitored.</p><p>A unified and intelligent living environment is also made possible by integration with other smart home systems, such as voice-activated assistants, climate control, and lighting. The system comprehends, anticipates, and responds—it does not only observe. IoT surveillance systems driven by AI are at the forefront of automation and safety as we transition to smarter cities and connected lifestyles. They are changing the notion of security itself, not merely securing areas.</p>",
@@ -9,7 +9,7 @@ export const blogs = [
     id: "1",
   },
   {
-    image: "/blogs/2.png",
+    image: "/blogs/2.webp",
     title:
       "The Rise of the Smart Hub – Centralizing AI and IoT for a Smarter Life.",
     description:
@@ -19,7 +19,7 @@ export const blogs = [
     id: "2",
   },
   {
-    image: "/blogs/3.png",
+    image: "/blogs/3.webp",
     title:
       "AI and IoT: A New Era of Commercial Surveillance and Smart Building Automation",
     description:
@@ -29,7 +29,7 @@ export const blogs = [
     id: "3",
   },
   {
-    image: "/blogs/4.png",
+    image: "/blogs/4.webp",
     title:
       "Future-Proofing Smart Cities with AI-Driven IoT Surveillance Systems",
     description:

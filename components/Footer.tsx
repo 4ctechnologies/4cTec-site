@@ -19,8 +19,6 @@ export default function Footer() {
                   <svg
                     xmlns='http://www.w3.org/2000/svg'
                     viewBox='0 0 50 50'
-                    width='full'
-                    height='full'
                     dangerouslySetInnerHTML={{ __html: link.icon }}
                     className='group'
                   ></svg>
@@ -42,8 +40,6 @@ export default function Footer() {
                   <svg
                     xmlns='http://www.w3.org/2000/svg'
                     viewBox='0 0 70 70'
-                    width='full'
-                    height='full'
                     dangerouslySetInnerHTML={{ __html: citation.icon }}
                     className='group'
                   ></svg>
