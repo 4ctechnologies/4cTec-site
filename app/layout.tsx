@@ -3,7 +3,7 @@ import { Inter, Poppins } from "next/font/google";
 import "./globals.css";
 import { ThemeProvider } from "@/context/ThemeContext";
 import { SessionProvider } from "next-auth/react";
-import Head from "next/head";
+import Tawk from "@/components/Tawk";
 
 const inter = Inter({
   subsets: ["latin"],
@@ -28,12 +28,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang='en'>
-      <Head>
-        <script
-          src='https://embed.tawk.to/682b0948f062c51916e087c4/1irk1oh6i'
-          async
-        />
-      </Head>
+      <Tawk />
       <body
         className={`${inter.variable} ${poppins.variable}} antialiased bg-white dark:bg-secondary`}
       >
