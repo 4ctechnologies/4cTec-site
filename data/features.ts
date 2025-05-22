@@ -1,26 +1,26 @@
 export const features = [
   {
-    image: "/Real-Time Smart Surveillance Dashboard.webp",
+    image: "/feature1.webp",
     description: "Real-Time Smart Surveillance Dashboard",
   },
   {
-    image: "/Integrated Smart Hub Control Panel.webp",
+    image: "/feature2.webp",
     description: "Integrated Smart Hub Control Panel",
   },
   {
-    image: "/AI-Driven Insights & Reports.webp",
+    image: "/feature3.webp",
     description: "AI-Driven Insights & Reports",
   },
   {
-    image: "/Automated Threat Detection & Alerts.webp",
+    image: "/feature4.webp",
     description: "Automated Threat Detection & Alerts",
   },
   {
-    image: "/Remote Device Management & Automation.webp",
+    image: "/feature5.webp",
     description: "Remote Device Management & Automation",
   },
   {
-    image: "/Multi-Layer User Access & Role Management.webp",
+    image: "/feature6.webp",
     description: "Multi-Layer User Access & Role Management",
   },
 ];
