@@ -34,7 +34,7 @@ export default function RootLayout({
       >
         <ThemeProvider>
           <SessionProvider>
-            <main className='md:max-w-[1600px] w-dvw dark:text-white mx-auto overflow-x-hidden'>
+            <main className=' w-dvw dark:text-white mx-auto overflow-x-hidden'>
               {children}
             </main>
           </SessionProvider>

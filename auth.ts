@@ -1,25 +1,27 @@
-import NextAuth from "next-auth"
-import Asgardeo from "next-auth/providers/asgardeo"
+import NextAuth from "next-auth";
+import Asgardeo from "next-auth/providers/asgardeo";
 
-declare module "next-auth"{
-  interface User{
-    username?:string;
-    given_name?:string;
-    family_name:string;
-    preferred_username:string;
-    name:string;
-    picture:string;
-    email_verified:string;
-    email:string;
+declare module "next-auth" {
+  interface User {
+    username?: string;
+    given_name?: string;
+    family_name: string;
+    preferred_username: string;
+    name: string;
+    picture: string;
+    email_verified: string;
+    email: string;
   }
 }
 
 export const { handlers, signIn, signOut, auth } = NextAuth({
-  providers: [Asgardeo({
-    issuer: process.env.AUTH_ASGARDEO_ISSUER
-  })],
-  session:{
-    strategy:"jwt"
+  providers: [
+    Asgardeo({
+      issuer: process.env.AUTH_ASGARDEO_ISSUER,
+    }),
+  ],
+  session: {
+    strategy: "jwt",
   },
   callbacks: {
     async jwt({ token, profile }) {
@@ -27,17 +29,16 @@ export const { handlers, signIn, signOut, auth } = NextAuth({
         token.username = profile.username;
         token.given_name = profile.given_name;
         token.family_name = profile.family_name;
-        token.email=profile.email;
+        token.email = profile.email;
         token.preferred_username = profile.preferred_username;
         token.picture = profile.picture;
-        token.email_verified= profile.email_verified;
-        token.name=profile.name;
-
+        token.email_verified = profile.email_verified;
+        token.name = profile.name;
       }
       // console.log({token,profile})
       return token;
     },
-    async session({ session, token }) {            
+    async session({ session, token }) {
       if (token) {
         session.user.username = token.username as string;
         session.user.name = token.name as string;
@@ -51,23 +52,20 @@ export const { handlers, signIn, signOut, auth } = NextAuth({
       // console.log("Session Callback:", { session, token });
       return session;
     },
-    authorized: async({ request, auth })=> {
-      console.log("Authorized Callback - Auth:", auth);
-  
+    authorized: async ({ request, auth }) => {
       if (!auth) {
         console.log("User is not authenticated, redirecting to home.");
         return false; // Deny access
       }
-  
+
       console.log("User is authenticated, allowing access.");
       return true; // Allow access
-    }
+    },
     // authorized: async ({request,auth})=>{
     //   if (!auth){
     //     return Response.redirect(new URL("/",request.nextUrl))
     //   }
     //   return !auth
     // }
-
-  }
-})
+  },
+});

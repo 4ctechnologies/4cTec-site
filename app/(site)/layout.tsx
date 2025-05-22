@@ -8,7 +8,7 @@ export default function SiteLayout({
   children: React.ReactNode;
 }) {
   return (
-    <div>
+    <div className='w-dvw md:max-w-[1600px] dark:text-white mx-auto overflow-x-hidden'>
       <Header />
       <ThemeToggle />
       {children}
