@@ -91,7 +91,7 @@ export default function Home() {
     <>
       <section
         className={clsx(
-          "mt-4 grid grid-cols-1 md:grid-cols-2 w-full min-h-lvh",
+          "mt-20 sm:mt-8 grid grid-cols-1 md:grid-cols-2 w-full min-h-lvh",
           isDark ? "bg-[url('/Hero.webp')]" : "bg-[url('/Hero-Light.webp')]",
           "bg-cover bg-center bg-no-repeat  text-secondary dark:text-white"
         )}
@@ -249,7 +249,7 @@ export default function Home() {
           <FeatureSection />
         </motion.div>
       </motion.section>
-      <section className="w-full flex flex-col justify-center items-center bg-white dark:bg-secondary dark:text-white">
+      <section className='w-full flex flex-col justify-center items-center bg-white dark:bg-secondary dark:text-white'>
         <YouTubeVideo />
       </section>
       <motion.section className='flex flex-col justify-center items-center w-full min-h-svh '>

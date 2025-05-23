@@ -10,7 +10,6 @@ import {
   Users,
   Settings,
   Home,
-  Menu,
   X,
   ChevronLeft,
   ChevronRight,
@@ -115,14 +114,14 @@ export function DashboardSidebar() {
   return (
     <>
       {/* Mobile menu button */}
-      <Button
+      {/* <Button
         variant='ghost'
         size='icon'
         className='fixed top-4 left-4 z-50 md:hidden'
         onClick={() => setIsOpen(!isOpen)}
       >
         {isOpen ? "" : <Menu className='h-6 w-6' />}
-      </Button>
+      </Button> */}
 
       {/* Desktop collapse button */}
       {!isMobile && (

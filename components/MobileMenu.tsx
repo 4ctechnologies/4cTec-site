@@ -103,7 +103,6 @@ const MobileMenu: React.FC<{
             </ul>
             <motion.div
               variants={childVarients}
-              onClick={() => setIsCollapsed(true)}
               className='flex flex-col max-w-80 space-y-8 py-4'
             >
               {children}
