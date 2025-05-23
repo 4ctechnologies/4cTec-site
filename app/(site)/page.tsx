@@ -16,6 +16,7 @@ import { MoreButton } from "@/components/MoreButton";
 import { useTheme } from "@/context/ThemeContext";
 import clsx from "clsx";
 import RotatingGradientButton from "@/components/AnimatedButton";
+import YouTubeVideo from "@/components/YouTubeVideo";
 
 export default function Home() {
   const parentVariants = {
@@ -248,6 +249,9 @@ export default function Home() {
           <FeatureSection />
         </motion.div>
       </motion.section>
+      <section className="w-full flex flex-col justify-center items-center bg-white dark:bg-secondary dark:text-white">
+        <YouTubeVideo />
+      </section>
       <motion.section className='flex flex-col justify-center items-center w-full min-h-svh '>
         <h1 className='text-6xl md:text-8xl max-w-3xl py-20 text-center'>
           4C Technologies pricing

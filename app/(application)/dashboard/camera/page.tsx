@@ -117,10 +117,13 @@ export default function CameraPage() {
       formData.append("file", selectedFile);
 
       // send the form data to the server localhost:5003/analyze
-      const response = await fetch("http://localhost:5003/analyze", {
-        method: "POST",
-        body: formData,
-      });
+      const response = await fetch(
+        "https://ai-cctv-382812827730.europe-west1.run.app/analyze",
+        {
+          method: "POST",
+          body: formData,
+        }
+      );
       if (!response.ok) {
         throw new Error(`Error: ${response.status}`);
       }
